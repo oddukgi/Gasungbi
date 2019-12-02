@@ -1,0 +1,31 @@
+//    func saveFavoriteItemViewContext() {
+//     let request: NSFetchRequest<FavoriteItem> = FavoriteItem.fetchRequest()
+//            request.sortDescriptors = [
+//                        NSSortDescriptor(key: "title", ascending: false)
+//                    ]
+//            DataController.shared.viewContext.perform {
+//                do {
+//                    let favorites = try DataController.shared.viewContext.fetch(request)
+//
+//                    favorites.forEach { (searchResult) in
+//                        FavoriteItemCoreData.shared.addFavoriteItems(results: self.selectedItems,toFavoriteItem: searchResult)
+//                    }
+//
+//                } catch {
+//                    print("Error fetching Pins: \(error)")
+//                }
+//            }
+//    }
+//
+
+
+func getFetchedResultsController(forAlbum album: PhotoAlbum, fromContext context: NSManagedObjectContext) -> NSFetchedResultsController<Photo> {
+
+    let fetchRequest: NSFetchRequest<Photo> = Photo.fetchRequest()
+    let sortDescriptor = NSSortDescriptor(key: "dateCreated", ascending: false)
+    let predicate = NSPredicate(format: "photoAlbum == %@", album)
+    fetchRequest.predicate = predicate
+    fetchRequest.sortDescriptors = [sortDescriptor]
+
+    return NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+}
