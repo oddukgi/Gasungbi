@@ -111,11 +111,6 @@
                         <viewLayoutGuide key="safeArea" id="pbk-5D-3G5"/>
                     </view>
                     <navigationItem key="navigationItem" title="Search Item" id="SDg-V3-nD4">
-                        <barButtonItem key="leftBarButtonItem" title="refresh" image="arrow.clockwise" catalog="system" id="XOu-QY-hCy">
-                            <connections>
-                                <action selector="refreshList:" destination="j3F-p1-zR4" id="lCS-w0-iia"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="favorite" image="icon-favorite-selected" id="BV5-uV-baj">
                             <connections>
                                 <action selector="addFavoriteItem:" destination="j3F-p1-zR4" id="jVA-3o-kYG"/>
@@ -170,7 +165,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Sj3-RS-Zyg">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Sj3-RS-Zyg">
                                 <rect key="frame" x="0.0" y="88" width="375" height="641"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
@@ -191,8 +186,7 @@
                         <viewLayoutGuide key="safeArea" id="FLc-9H-m6P"/>
                     </view>
                     <navigationItem key="navigationItem" title="Favorite Item" id="3eo-vD-q0O">
-                        <barButtonItem key="leftBarButtonItem" title="Refresh" image="arrow.clockwise" catalog="system" id="4YA-hQ-Aju"/>
-                        <barButtonItem key="rightBarButtonItem" title="Trash" image="trash" catalog="system" landscapeImage="하지만" id="Dx6-pA-yAd">
+                        <barButtonItem key="rightBarButtonItem" title="Trash" image="trash" catalog="system" id="Dx6-pA-yAd">
                             <connections>
                                 <action selector="deleteItems:" destination="JHk-3E-aDl" id="95Y-C1-CFP"/>
                             </connections>
@@ -209,9 +203,7 @@
     </scenes>
     <resources>
         <image name="List" width="42.666667938232422" height="42.666667938232422"/>
-        <image name="arrow.clockwise" catalog="system" width="56" height="64"/>
         <image name="icon-favorite-selected" width="29" height="29"/>
         <image name="trash" catalog="system" width="60" height="64"/>
-        <image name="하지만" width="16" height="16"/>
     </resources>
 </document>

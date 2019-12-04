@@ -18,7 +18,7 @@ class FavoriteTableViewCell: UITableViewCell,Label {
     @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var itemLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
-    var favoriteItem: FavoriteItem!
+    var favoriteItem: Favorites!
     
     var priceformatter = PriceForm()
     override func awakeFromNib() {
@@ -34,15 +34,16 @@ class FavoriteTableViewCell: UITableViewCell,Label {
             self.itemImageView.kf.setImage(with: URL(string: imageURL))
         }
             
-//            print(self.favoriteItem.title!)
-//            print(self.favoriteItem.lprice!)
-        
-            self.itemLabel.text = self.favoriteItem.title
-            self.priceLabel.text = self.favoriteItem.lprice
-            self.priceformatter.priceString = self.priceLabel.text
-            self.updateLabel()
+//      print(self.favoriteItem.title!)
+//      print(self.favoriteItem.lprice!)
+    
+        self.itemLabel.text = self.favoriteItem.title
+        self.priceLabel.text = self.favoriteItem.lprice
+        self.priceformatter.priceString = self.priceLabel.text
+        self.updateLabel()
         
     }
+
 
     func updateLabel() {
         guard priceformatter.updatePriceForm() else {

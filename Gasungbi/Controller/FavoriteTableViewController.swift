@@ -12,17 +12,19 @@ import CoreData
 class FavoriteTableViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    var fetchedFavoriteItem:NSFetchedResultsController<FavoriteItem>!
+    var fetchedResultsController:NSFetchedResultsController<Favorites>!
+    var favorites: Favorites!
+    var searchItem: SearchItem!
+
     
-    var favoriteItem: FavoriteItem!
-    var favoriteArray  = [FavoriteItem]()
     fileprivate func setFetchedFavoriteController() {
-        fetchedFavoriteItem = FavoriteItemCoreData.shared.setFetchedResultsController(fromContext: DataController.shared.viewContext)
-        fetchedFavoriteItem.delegate = self
+        fetchedResultsController = FavoritesCoreData.shared.getFetchedResultsController(fromContext: DataController.shared.viewContext)
+        
+        fetchedResultsController.delegate = self
         
         // use the results to populate the notes array
         do {
-            try fetchedFavoriteItem.performFetch()
+            try fetchedResultsController.performFetch()
         } catch {
             fatalError("The fetch could not be performed: \(error.localizedDescription)")
         }
@@ -30,28 +32,29 @@ class FavoriteTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setFetchedFavoriteController()
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        
-        // load data
-        setFetchedFavoriteController()
-        getFavoriteItemArray()
+
         registerTableViewCell()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setFetchedFavoriteController()
+        tableView.reloadData()
+        
         if let indexPath = tableView.indexPathForSelectedRow {
             tableView.deselectRow(at: indexPath, animated: false)
             tableView.reloadRows(at: [indexPath], with: .fade)
         }
+
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        fetchedFavoriteItem = nil
+        fetchedResultsController = nil
+       
     }
     // register TableViewCell
     func registerTableViewCell() {
@@ -59,36 +62,46 @@ class FavoriteTableViewController: UIViewController {
         self.tableView.register(UINib(nibName: "FavoriteTableViewCell", bundle: nil), forCellReuseIdentifier: "FavoriteTableViewCell")
     }
     
+    /// Deletes the notebook at the specified index path
+     func deleteFavoriteItem(at indexPath: IndexPath) {
+         let itemToDelete = fetchedResultsController.object(at: indexPath )
+         DataController.shared.viewContext.delete(itemToDelete)
+         try?  DataController.shared.viewContext.save()
+        
+//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "FavoriteItem")
+//        let result = try? DataController.shared.viewContext.fetch(request)
+//        let resultData = result as! [NSManagedObject]
+//
+//        DataController.shared.viewContext.delete(resultData[indexPath.row])
+//        do {
+//            try DataController.shared.viewContext.save()
+//            print("TABLEVIEW-EDIT: saved!")
+//        } catch let error as NSError  {
+//            print("Could not save \(error), \(error.userInfo)")
+//        } catch {
+//            // add general error handle here
+//        }
+     }
+     
+    
 // MARK: - delete items
     @IBAction func deleteItems(_ sender: Any) {
+         
+//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "FavoriteItem")
+//        let result = try? DataController.shared.viewContext.fetch(request)
+//        let resultData = result as! [NSManagedObject]
+//
+//        DataController.shared.viewContext.delete(resultData[index])
 
+//         do {
+//             try DataController.shared.viewContext.save()
+//             print("TABLEVIEW-EDIT: saved!")
+//         } catch let error as NSError  {
+//             print("Could not save \(error), \(error.userInfo)")
+//         } catch {
+//             // add general error handle here
+//         }
     }
-    
-    
-    func getFavoriteItemArray() {
-    
-     
-
-      do {
-            var fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "FavoriteItem")
-            favoriteArray = try DataController.shared.viewContext.fetch(fetchRequest) as! [FavoriteItem]
-
-            var i = 0
-
-            self.tableView.reloadData()
-
-         } catch let error as NSError {
-            print("Could not fetch \(error)")
-        }
-
-    }
-    /// Deletes the notebook at the specified index path
-    func deleteFavoriteItem(at indexPath: IndexPath) {
-        let itemToDelete = fetchedFavoriteItem.object(at: indexPath)
-        DataController.shared.viewContext.delete(itemToDelete)
-        try?  DataController.shared.viewContext.save()
-    }
-    
     
 }
 
@@ -96,16 +109,16 @@ class FavoriteTableViewController: UIViewController {
 extension FavoriteTableViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return fetchedFavoriteItem.sections?.count ??  1
+        return fetchedResultsController.sections?.count ??  1
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fetchedFavoriteItem.sections?[section].numberOfObjects ?? 0
+        return fetchedResultsController.sections?[section].numberOfObjects ?? 0
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
   
-        let currentItem = fetchedFavoriteItem.object(at: indexPath)
+        let currentItem = fetchedResultsController.object(at: indexPath)
         guard currentItem.title?.isEmpty == true else {
             return 88
         }
@@ -114,10 +127,10 @@ extension FavoriteTableViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 검색 결과값이 없을 때
-        let currentItem = fetchedFavoriteItem.object(at: indexPath)
+        let currentItem = fetchedResultsController.object(at: indexPath)
         guard currentItem.title != nil else { return UITableViewCell() }
        // 결과값 있을 때, 없을 때
-        if currentItem.title!.isEmpty == true {
+        if currentItem.title!.isEmpty {
             self.tableView.setContentOffset(CGPoint.zero, animated: false)
             return tableView.dequeueReusableCell(withIdentifier: "EmptyTableViewCell", for: indexPath) as? EmptyTableViewCell ?? UITableViewCell()
         }
@@ -125,10 +138,8 @@ extension FavoriteTableViewController: UITableViewDelegate, UITableViewDataSourc
             
             if let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteTableViewCell", for: indexPath) as? FavoriteTableViewCell {
                 
-              print(currentItem.title!)
-               let replaced = currentItem.title?.replacingOccurrences(of: "<b>", with: " ")
-               let newTitle = replaced?.replacingOccurrences(of: "</b>", with: " ")
-               currentItem.title = newTitle
+               print(currentItem.title!)
+               currentItem.title = currentItem.title!
                cell.favoriteItem = currentItem
                     
                cell.configure()
@@ -147,38 +158,44 @@ extension FavoriteTableViewController: UITableViewDelegate, UITableViewDataSourc
             
     }
     
-// TableView 데이터 더 불러오기
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        switch editingStyle {
+        case .delete: deleteFavoriteItem(at: indexPath)
+        default: () // Unsupported
+        }
+    }
+
+    // MARK: - select / deselct item
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         // 북마크된 데이터를 갯수만큼 받아서 출력하기
-        let currentItem = fetchedFavoriteItem.sections?[0].numberOfObjects
+        let currentItem = fetchedResultsController.sections?[0].numberOfObjects
+        print(currentItem!)
 
-        
     }
-    
-    //MARK: - get data index
+
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        
-       // print(indexPath.item)
+    
         return indexPath
     }
 
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
-        guard let numberOfItem = fetchedFavoriteItem.sections?[0].numberOfObjects,numberOfItem > 0 else {
+        guard let numberOfItem = fetchedResultsController.sections?[0].numberOfObjects,numberOfItem > 0 else {
             return
         }
+        
+       // print(numberOfItem)
         let selectedCell:UITableViewCell = tableView.cellForRow(at: indexPath)!
-        selectedCell.contentView.backgroundColor = .gray
-       // favoriteArray[indexPath.row].selected = true
+        selectedCell.contentView.backgroundColor = .lightGray
       }
        
        func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        guard let numberOfItem = fetchedFavoriteItem.sections?[0].numberOfObjects,numberOfItem > 0 else {
-                return
+        guard let numberOfItem = fetchedResultsController.sections?[0].numberOfObjects,numberOfItem > 0 else {
+            return
         }
         let selectedCell:UITableViewCell = tableView.cellForRow(at: indexPath)!
         selectedCell.contentView.backgroundColor = .clear
-       // favoriteArray[indexPath.row].selected = false
+
        }
        
     //when select row, url website opened

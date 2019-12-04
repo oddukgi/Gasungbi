@@ -19,11 +19,36 @@ class SearchTableViewController: UIViewController, NSFetchedResultsControllerDel
     var pageCount: Int = 1
     var keyword: String = ""
     var cellData = [SearchResults]()
-    var fetchedSearchKeyword: NSFetchedResultsController<SearchKeyword>!
-    var fetchedFavorites: NSFetchedResultsController<FavoriteItem>!
-    var favoriteArray = [FavoriteItem]()
-    var searchKeyword: SearchKeyword!
+   // var fetchedSearchKeyword: NSFetchedResultsController<SearchItem>!
+    var favorites: Favorites!
+    var recentKeyword: Keyword!
+    var searchItem: SearchItem!
+   // var fetchedFavorites: NSFetchedResultsController<FavoriteItem>!
+//    var favoriteArray = [FavoriteItem]()
+
     // MARK: - Methods
+
+    fileprivate func setFetchedResultController() {
+//        fetchedSearchKeyword = SearchKeywordCoreData.shared.getFetchedResultsController(fromContext: DataController.shared.viewContext)
+//        fetchedSearchKeyword.delegate = self
+        
+//
+//        do {
+//            try fetchedSearchKeyword.performFetch()
+//        } catch {
+//            fatalError("The fetch could not be performed: \(error.localizedDescription)")
+//        }
+        
+//        fetchedFavorites = FavoriteItemCoreData.shared.getFetchedResultsController(fromContext: DataController.shared.viewContext)
+//        fetchedFavorites.delegate = self
+//
+//
+//        do {
+//            try fetchedFavorites.performFetch()
+//        } catch {
+//            fatalError("The fetch could not be performed: \(error.localizedDescription)")
+//        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,24 +57,20 @@ class SearchTableViewController: UIViewController, NSFetchedResultsControllerDel
         self.tableView.delegate = self
         self.tableView.dataSource = self
         navigationItem.hidesSearchBarWhenScrolling = true
-        
-        fetchedSearchKeyword = SearchKeywordCoreData.shared.getFetchedResultsController(fromContext: DataController.shared.viewContext)
-        fetchedSearchKeyword.delegate = self
-        
-        fetchedFavorites = FavoriteItemCoreData.shared.getFetchedResultsController(fromContext: DataController.shared.viewContext)
-        fetchedFavorites.delegate = self
+       // setFetchedResultController()
+       // deleteData()
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationItem.hidesSearchBarWhenScrolling = false
-  
+    
     }
     
     override func viewDidDisappear(_ animated: Bool) {
          super.viewDidDisappear(animated)
-         fetchedSearchKeyword = nil
-         fetchedFavorites = nil
+       //  fetchedSearchKeyword = nil
+         //fetchedFavorites = nil
      }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -88,42 +109,33 @@ class SearchTableViewController: UIViewController, NSFetchedResultsControllerDel
         return cellData.filter { return $0.isSelected }
     }
     
-    @IBAction func refreshList(_ sender: Any) {
+    func deleteData() {
         
-    }
-    
-    
-    
-    @IBAction func addFavoriteItem(_ sender: Any) {
-        
-//        let fetchRequest: NSFetchRequest<FavoriteItem> = FavoriteItem.fetchRequest()
-//        do{
-//         
-//            favoriteArray = try self.fetchedFavorites.managedObjectContext.fetch(fetchRequest)
-//            favoriteArray.forEach { (faovriteItem) in
-//                self.fetchedFavorites.managedObjectContext.delete(faovriteItem)
-//            }
-//            
-//            try DataController.shared.viewContext.save()
-//        
-//        }
-//        catch
-//        {
-//            print("Could not load save data: \(error.localizedDescription)")
-//        }
-//        
-        //print(selectedItems.map {guard $0.isSelected == true else { return } $0.title ?? "";))
-        saveFavoriteItems()
-    }
-    func saveFavoriteItems() {
-   
-        let favoriteItem = FavoriteItem(context: DataController.shared.viewContext)
-        FavoriteItemCoreData.shared.addFavoriteItems(selectedItems: selectedItems, toFavoriteItem: favoriteItem)
-     }
-    func saveCellDataFromSearchKeyword(saerchResult: SearchResults) {
-    
-      searchKeyword = SearchKeywordCoreData.shared.saveCellData(usingContext: DataController.shared.viewContext,searchResult: saerchResult)
+      let request = NSFetchRequest<NSFetchRequestResult>(entityName: "FavoriteItem")
 
+       let result = try? DataController.shared.viewContext.fetch(request)
+       let resultData = result as! [NSManagedObject]
+
+       for object in resultData {
+           DataController.shared.viewContext.delete(object)
+       }
+
+       do {
+           try DataController.shared.viewContext.save()
+           print("TABLEVIEW-EDIT: saved!")
+       } catch let error as NSError  {
+           print("Could not save \(error), \(error.userInfo)")
+       } catch {
+           // add general error handle here
+       }
+
+    }
+ 
+    
+    func saveCellDataFromSearchKeyword(searchResult: SearchResults) {
+
+        let index: Int = 0
+        searchItem = SearchItemCoreData.shared.saveResults(searchResult: searchResult, fromContext: DataController.shared.viewContext, index: index)
         // Save newly created pin.
         do {
             try DataController.shared.save()
@@ -131,8 +143,11 @@ class SearchTableViewController: UIViewController, NSFetchedResultsControllerDel
             print("Error saving new pin: \(error)")
         }
     }
- 
-
+  
+    
+    @IBAction func addFavoriteItem(_ sender: Any) {
+        favorites = FavoritesCoreData.shared.createFavorites(selectedItems: selectedItems,forSearch: searchItem)
+    }
     
 }
 
@@ -144,14 +159,15 @@ extension SearchTableViewController: UISearchBarDelegate {
         self.totalCount = 0
         self.pageCount = 1
 
+        keyword = searchBar.text!
         guard let query = searchBar.text, query.trimmingCharacters(in: .whitespaces) != "" else {
             self.cellData.removeAll()
             self.tableView.reloadData()
             return
         }
-        keyword = searchBar.text!
-        SearchKeywordCoreData.shared.addKeyword(keyword: keyword, fromContext: DataController.shared.viewContext)
 
+        recentKeyword = KeywordCoreData.shared.setKeyword(item: keyword, usingContext: DataController.shared.viewContext)
+    
         NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(self.reload(_:)), object: searchBar)
         perform(#selector(self.reload(_:)), with: searchBar, afterDelay: 0.2)
     }
@@ -198,7 +214,7 @@ extension SearchTableViewController: UITableViewDelegate, UITableViewDataSource 
                 self.cellData[indexPath.row].title = newTitle
                 
                 cell.configure(data: self.cellData[indexPath.row])
-                saveCellDataFromSearchKeyword(saerchResult: self.cellData[indexPath.row])
+                saveCellDataFromSearchKeyword(searchResult: self.cellData[indexPath.row])
                 
                 return cell
             }
@@ -229,7 +245,7 @@ extension SearchTableViewController: UITableViewDelegate, UITableViewDataSource 
         if selectedItems.count > 2 {
             return nil
         }
-        print(indexPath.item)
+        print("index array: \(indexPath.item)")
         return indexPath
     }
 

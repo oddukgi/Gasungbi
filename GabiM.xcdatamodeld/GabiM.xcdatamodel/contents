@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14903" systemVersion="18G1012" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Favorites" representedClassName=".Favorites" syncable="YES" codeGenerationType="category">
+        <attribute name="hprice" optional="YES" attributeType="String"/>
+        <attribute name="image" optional="YES" attributeType="String"/>
+        <attribute name="index" optional="YES" attributeType="String"/>
+        <attribute name="link" optional="YES" attributeType="String"/>
+        <attribute name="lprice" optional="YES" attributeType="String"/>
+        <attribute name="mallName" optional="YES" attributeType="String"/>
+        <attribute name="select" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="searchitems" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SearchItems" inverseName="favorites" inverseEntity="SearchItems"/>
+    </entity>
+    <entity name="Keyword" representedClassName=".Keyword" syncable="YES" codeGenerationType="category">
+        <attribute name="recentString" optional="YES" attributeType="String"/>
+        <relationship name="searchitems" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SearchItems" inverseName="keyword" inverseEntity="SearchItems"/>
+    </entity>
+    <entity name="SearchItems" representedClassName=".SearchItem" syncable="YES" codeGenerationType="category">
+        <attribute name="hprice" optional="YES" attributeType="String"/>
+        <attribute name="image" optional="YES" attributeType="String"/>
+        <attribute name="index" optional="YES" attributeType="String"/>
+        <attribute name="link" optional="YES" attributeType="String"/>
+        <attribute name="lprice" optional="YES" attributeType="String"/>
+        <attribute name="mallName" optional="YES" attributeType="String"/>
+        <attribute name="select" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="favorites" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Favorites" inverseName="searchitems" inverseEntity="Favorites"/>
+        <relationship name="keyword" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Keyword" inverseName="searchitems" inverseEntity="Keyword"/>
+    </entity>
+    <elements>
+        <element name="Favorites" positionX="-1178.77734375" positionY="-122.609375" width="128" height="178"/>
+        <element name="Keyword" positionX="-1655.9375" positionY="-5.125" width="128" height="73"/>
+        <element name="SearchItems" positionX="-1414.39453125" positionY="-125.5078125" width="128" height="193"/>
+    </elements>
+</model>

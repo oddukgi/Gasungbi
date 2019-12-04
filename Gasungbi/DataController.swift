@@ -17,7 +17,7 @@ class DataController {
         return persistentContainer.viewContext
     }
 
-    static let shared = DataController(modelName: "GasungbiM")
+    static let shared = DataController(modelName: "GabiM")
 
     private init(modelName: String) {
         persistentContainer = NSPersistentContainer(name: modelName)
