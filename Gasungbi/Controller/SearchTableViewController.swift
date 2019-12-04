@@ -96,22 +96,22 @@ class SearchTableViewController: UIViewController, NSFetchedResultsControllerDel
     
     @IBAction func addFavoriteItem(_ sender: Any) {
         
-        let fetchRequest: NSFetchRequest<FavoriteItem> = FavoriteItem.fetchRequest()
-        do{
-         
-            favoriteArray = try self.fetchedFavorites.managedObjectContext.fetch(fetchRequest)
-            favoriteArray.forEach { (faovriteItem) in
-                self.fetchedFavorites.managedObjectContext.delete(faovriteItem)
-            }
-            
-            try DataController.shared.viewContext.save()
-        
-        }
-        catch
-        {
-            print("Could not load save data: \(error.localizedDescription)")
-        }
-        
+//        let fetchRequest: NSFetchRequest<FavoriteItem> = FavoriteItem.fetchRequest()
+//        do{
+//         
+//            favoriteArray = try self.fetchedFavorites.managedObjectContext.fetch(fetchRequest)
+//            favoriteArray.forEach { (faovriteItem) in
+//                self.fetchedFavorites.managedObjectContext.delete(faovriteItem)
+//            }
+//            
+//            try DataController.shared.viewContext.save()
+//        
+//        }
+//        catch
+//        {
+//            print("Could not load save data: \(error.localizedDescription)")
+//        }
+//        
         //print(selectedItems.map {guard $0.isSelected == true else { return } $0.title ?? "";))
         saveFavoriteItems()
     }
