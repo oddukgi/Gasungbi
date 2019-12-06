@@ -15,17 +15,22 @@
 		8824FEE723892B9F00E6263F /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8824FEE623892B9F00E6263F /* NetworkClient.swift */; };
 		8824FEE923892BB400E6263F /* NetworkClient+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8824FEE823892BB400E6263F /* NetworkClient+Constants.swift */; };
 		8824FEEB23892C1100E6263F /* NetworkClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8824FEEA23892C1100E6263F /* NetworkClientProtocol.swift */; };
+		883ACF07239A4F6D003A2A5E /* GabiM.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 883ACF05239A4F6C003A2A5E /* GabiM.xcdatamodeld */; };
+		883ACF16239A5520003A2A5E /* Naver Client in Resources */ = {isa = PBXBuildFile; fileRef = 883ACF0B239A5520003A2A5E /* Naver Client */; };
+		883ACF17239A5520003A2A5E /* FavoritesCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ACF0C239A5520003A2A5E /* FavoritesCoreData.swift */; };
+		883ACF18239A5520003A2A5E /* SearchItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ACF0D239A5520003A2A5E /* SearchItem+CoreDataClass.swift */; };
+		883ACF19239A5520003A2A5E /* SearchItemCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ACF0E239A5520003A2A5E /* SearchItemCoreData.swift */; };
+		883ACF1A239A5520003A2A5E /* Favorites+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ACF0F239A5520003A2A5E /* Favorites+CoreDataClass.swift */; };
+		883ACF1B239A5520003A2A5E /* FavoritesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ACF10239A5520003A2A5E /* FavoritesProtocol.swift */; };
+		883ACF1C239A5520003A2A5E /* Keyword+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ACF11239A5520003A2A5E /* Keyword+CoreDataClass.swift */; };
+		883ACF1D239A5520003A2A5E /* KeywordProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ACF12239A5520003A2A5E /* KeywordProtocol.swift */; };
+		883ACF1E239A5520003A2A5E /* KeywordCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ACF13239A5520003A2A5E /* KeywordCoreData.swift */; };
+		883ACF1F239A5520003A2A5E /* Naver Request in Resources */ = {isa = PBXBuildFile; fileRef = 883ACF14239A5520003A2A5E /* Naver Request */; };
+		883ACF20239A5520003A2A5E /* SearchItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ACF15239A5520003A2A5E /* SearchItemProtocol.swift */; };
 		8851F3702384E13800AED241 /* FavoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8851F36F2384E13800AED241 /* FavoriteTableViewController.swift */; };
 		8853B506238C1F3A006F64A3 /* PriceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8853B505238C1F3A006F64A3 /* PriceTableViewController.swift */; };
 		886411552386AFE70073E13E /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886411542386AFE70073E13E /* DataController.swift */; };
 		886411622386BB520073E13E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886411612386BB520073E13E /* SceneDelegate.swift */; };
-		887971FA23915F6E00062412 /* GasungbiM.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 887971F823915F6E00062412 /* GasungbiM.xcdatamodeld */; };
-		887971FD23915F9600062412 /* SearchKeyword+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887971FB23915F9600062412 /* SearchKeyword+CoreDataClass.swift */; };
-		887971FE23915F9600062412 /* FavoriteItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887971FC23915F9600062412 /* FavoriteItem+CoreDataClass.swift */; };
-		8879720323915FC600062412 /* FavoriteItemCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887971FF23915FC600062412 /* FavoriteItemCoreData.swift */; };
-		8879720423915FC600062412 /* SearchKeywordCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8879720023915FC600062412 /* SearchKeywordCoreData.swift */; };
-		8879720523915FC600062412 /* SearchKeywordProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8879720123915FC600062412 /* SearchKeywordProtocol.swift */; };
-		8879720623915FC600062412 /* FavoriteItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8879720223915FC600062412 /* FavoriteItemProtocol.swift */; };
 		88A7183F238F7040005F607A /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A7183D238F703F005F607A /* SearchTableViewCell.swift */; };
 		88A71840238F7040005F607A /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88A7183E238F7040005F607A /* SearchTableViewCell.xib */; };
 		88AF2AAE238EACB500C343DD /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF2AAD238EACB500C343DD /* APIManager.swift */; };
@@ -38,6 +43,7 @@
 		88E3CA0E2393F1F10090FCB2 /* FavoriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88E3CA0C2393F1F10090FCB2 /* FavoriteTableViewCell.xib */; };
 		88F7BE762392B69900A9D203 /* memo in Resources */ = {isa = PBXBuildFile; fileRef = 88F7BE752392B69900A9D203 /* memo */; };
 		88FE77AB2384020F001F6FAD /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FE77AA2384020F001F6FAD /* UIViewController+Extensions.swift */; };
+		8FF7B1E9D6581F68C4461B4C /* Pods_Gasungbi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED88874C197F599A0A3D176B /* Pods_Gasungbi.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,17 +57,22 @@
 		8824FEE623892B9F00E6263F /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		8824FEE823892BB400E6263F /* NetworkClient+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkClient+Constants.swift"; sourceTree = "<group>"; };
 		8824FEEA23892C1100E6263F /* NetworkClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientProtocol.swift; sourceTree = "<group>"; };
+		883ACF06239A4F6C003A2A5E /* GabiM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GabiM.xcdatamodel; sourceTree = "<group>"; };
+		883ACF0B239A5520003A2A5E /* Naver Client */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Naver Client"; path = "Model/Naver Client"; sourceTree = "<group>"; };
+		883ACF0C239A5520003A2A5E /* FavoritesCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesCoreData.swift; path = Model/FavoritesCoreData.swift; sourceTree = "<group>"; };
+		883ACF0D239A5520003A2A5E /* SearchItem+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SearchItem+CoreDataClass.swift"; path = "Model/SearchItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		883ACF0E239A5520003A2A5E /* SearchItemCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchItemCoreData.swift; path = Model/SearchItemCoreData.swift; sourceTree = "<group>"; };
+		883ACF0F239A5520003A2A5E /* Favorites+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Favorites+CoreDataClass.swift"; path = "Model/Favorites+CoreDataClass.swift"; sourceTree = "<group>"; };
+		883ACF10239A5520003A2A5E /* FavoritesProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesProtocol.swift; path = Model/FavoritesProtocol.swift; sourceTree = "<group>"; };
+		883ACF11239A5520003A2A5E /* Keyword+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Keyword+CoreDataClass.swift"; path = "Model/Keyword+CoreDataClass.swift"; sourceTree = "<group>"; };
+		883ACF12239A5520003A2A5E /* KeywordProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeywordProtocol.swift; path = Model/KeywordProtocol.swift; sourceTree = "<group>"; };
+		883ACF13239A5520003A2A5E /* KeywordCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeywordCoreData.swift; path = Model/KeywordCoreData.swift; sourceTree = "<group>"; };
+		883ACF14239A5520003A2A5E /* Naver Request */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Naver Request"; path = "Model/Naver Request"; sourceTree = "<group>"; };
+		883ACF15239A5520003A2A5E /* SearchItemProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchItemProtocol.swift; path = Model/SearchItemProtocol.swift; sourceTree = "<group>"; };
 		8851F36F2384E13800AED241 /* FavoriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewController.swift; sourceTree = "<group>"; };
 		8853B505238C1F3A006F64A3 /* PriceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceTableViewController.swift; sourceTree = "<group>"; };
 		886411542386AFE70073E13E /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		886411612386BB520073E13E /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		887971F923915F6E00062412 /* GasungbiM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GasungbiM.xcdatamodel; sourceTree = "<group>"; };
-		887971FB23915F9600062412 /* SearchKeyword+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SearchKeyword+CoreDataClass.swift"; sourceTree = "<group>"; };
-		887971FC23915F9600062412 /* FavoriteItem+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FavoriteItem+CoreDataClass.swift"; sourceTree = "<group>"; };
-		887971FF23915FC600062412 /* FavoriteItemCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteItemCoreData.swift; sourceTree = "<group>"; };
-		8879720023915FC600062412 /* SearchKeywordCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchKeywordCoreData.swift; sourceTree = "<group>"; };
-		8879720123915FC600062412 /* SearchKeywordProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchKeywordProtocol.swift; sourceTree = "<group>"; };
-		8879720223915FC600062412 /* FavoriteItemProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteItemProtocol.swift; sourceTree = "<group>"; };
 		88A7183D238F703F005F607A /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTableViewCell.swift; path = Gasungbi/Cells/SearchTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		88A7183E238F7040005F607A /* SearchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchTableViewCell.xib; path = Gasungbi/Cells/SearchTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		88AF2AAD238EACB500C343DD /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -74,6 +85,9 @@
 		88E3CA0C2393F1F10090FCB2 /* FavoriteTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoriteTableViewCell.xib; sourceTree = "<group>"; };
 		88F7BE752392B69900A9D203 /* memo */ = {isa = PBXFileReference; lastKnownFileType = text; path = memo; sourceTree = "<group>"; };
 		88FE77AA2384020F001F6FAD /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		92C65D977B6266C2A1B01B43 /* Pods-Gasungbi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gasungbi.debug.xcconfig"; path = "Target Support Files/Pods-Gasungbi/Pods-Gasungbi.debug.xcconfig"; sourceTree = "<group>"; };
+		AC839997E06AD2C781FF99E9 /* Pods-Gasungbi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gasungbi.release.xcconfig"; path = "Target Support Files/Pods-Gasungbi/Pods-Gasungbi.release.xcconfig"; sourceTree = "<group>"; };
+		ED88874C197F599A0A3D176B /* Pods_Gasungbi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gasungbi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FF7B1E9D6581F68C4461B4C /* Pods_Gasungbi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +105,8 @@
 		71908A0B075290309CA1A09B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				92C65D977B6266C2A1B01B43 /* Pods-Gasungbi.debug.xcconfig */,
+				AC839997E06AD2C781FF99E9 /* Pods-Gasungbi.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -97,11 +114,12 @@
 		880A7ED523829F3C005425AE = {
 			isa = PBXGroup;
 			children = (
+				883ACF05239A4F6C003A2A5E /* GabiM.xcdatamodeld */,
 				88F7BE752392B69900A9D203 /* memo */,
-				887971F823915F6E00062412 /* GasungbiM.xcdatamodeld */,
 				880A7EE023829F3C005425AE /* Gasungbi */,
 				880A7EDF23829F3C005425AE /* Products */,
 				71908A0B075290309CA1A09B /* Pods */,
+				F0156CF11F0D0CF2E015DEE1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,9 +134,19 @@
 		880A7EE023829F3C005425AE /* Gasungbi */ = {
 			isa = PBXGroup;
 			children = (
+				883ACF0F239A5520003A2A5E /* Favorites+CoreDataClass.swift */,
+				883ACF0C239A5520003A2A5E /* FavoritesCoreData.swift */,
+				883ACF10239A5520003A2A5E /* FavoritesProtocol.swift */,
+				883ACF11239A5520003A2A5E /* Keyword+CoreDataClass.swift */,
+				883ACF13239A5520003A2A5E /* KeywordCoreData.swift */,
+				883ACF12239A5520003A2A5E /* KeywordProtocol.swift */,
+				883ACF0B239A5520003A2A5E /* Naver Client */,
+				883ACF14239A5520003A2A5E /* Naver Request */,
+				883ACF0D239A5520003A2A5E /* SearchItem+CoreDataClass.swift */,
+				883ACF0E239A5520003A2A5E /* SearchItemCoreData.swift */,
+				883ACF15239A5520003A2A5E /* SearchItemProtocol.swift */,
 				886411542386AFE70073E13E /* DataController.swift */,
 				8824FEE523892B7200E6263F /* NetworkClient */,
-				88FE77A9238401B6001F6FAD /* Model */,
 				8853B4F8238C0322006F64A3 /* Cells */,
 				888577EA238AD60000C37042 /* TableView */,
 				88FE77A8238401A1001F6FAD /* Controller */,
@@ -177,17 +205,12 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		88FE77A9238401B6001F6FAD /* Model */ = {
+		F0156CF11F0D0CF2E015DEE1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				887971FF23915FC600062412 /* FavoriteItemCoreData.swift */,
-				8879720223915FC600062412 /* FavoriteItemProtocol.swift */,
-				8879720023915FC600062412 /* SearchKeywordCoreData.swift */,
-				8879720123915FC600062412 /* SearchKeywordProtocol.swift */,
-				887971FB23915F9600062412 /* SearchKeyword+CoreDataClass.swift */,
-				887971FC23915F9600062412 /* FavoriteItem+CoreDataClass.swift */,
+				ED88874C197F599A0A3D176B /* Pods_Gasungbi.framework */,
 			);
-			path = Model;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,9 +220,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 880A7EF523829F3E005425AE /* Build configuration list for PBXNativeTarget "Gasungbi" */;
 			buildPhases = (
+				4AEF9A95CB40EBEC62A37EBA /* [CP] Check Pods Manifest.lock */,
 				880A7EDA23829F3C005425AE /* Sources */,
 				880A7EDB23829F3C005425AE /* Frameworks */,
 				880A7EDC23829F3C005425AE /* Resources */,
+				3D6C3B115D9BC18330FCE642 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,42 +278,89 @@
 				88AF2AB7238EC10800C343DD /* EmptyTableViewCell.xib in Resources */,
 				88E3CA0E2393F1F10090FCB2 /* FavoriteTableViewCell.xib in Resources */,
 				880A7EEE23829F3E005425AE /* Assets.xcassets in Resources */,
+				883ACF1F239A5520003A2A5E /* Naver Request in Resources */,
 				880A7EE923829F3C005425AE /* Main.storyboard in Resources */,
 				88A71840238F7040005F607A /* SearchTableViewCell.xib in Resources */,
+				883ACF16239A5520003A2A5E /* Naver Client in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3D6C3B115D9BC18330FCE642 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gasungbi/Pods-Gasungbi-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gasungbi/Pods-Gasungbi-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gasungbi/Pods-Gasungbi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4AEF9A95CB40EBEC62A37EBA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Gasungbi-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		880A7EDA23829F3C005425AE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				883ACF17239A5520003A2A5E /* FavoritesCoreData.swift in Sources */,
 				8808EEF123864EA400E598B7 /* SearchResultMapper.swift in Sources */,
 				8824FEE723892B9F00E6263F /* NetworkClient.swift in Sources */,
-				887971FD23915F9600062412 /* SearchKeyword+CoreDataClass.swift in Sources */,
-				887971FA23915F6E00062412 /* GasungbiM.xcdatamodeld in Sources */,
+				883ACF1B239A5520003A2A5E /* FavoritesProtocol.swift in Sources */,
+				883ACF20239A5520003A2A5E /* SearchItemProtocol.swift in Sources */,
+				883ACF07239A4F6D003A2A5E /* GabiM.xcdatamodeld in Sources */,
 				88AF2AB4238EBEA000C343DD /* SearchTableViewController.swift in Sources */,
-				8879720623915FC600062412 /* FavoriteItemProtocol.swift in Sources */,
 				88FE77AB2384020F001F6FAD /* UIViewController+Extensions.swift in Sources */,
+				883ACF18239A5520003A2A5E /* SearchItem+CoreDataClass.swift in Sources */,
 				88E3CA0D2393F1F10090FCB2 /* FavoriteTableViewCell.swift in Sources */,
 				8853B506238C1F3A006F64A3 /* PriceTableViewController.swift in Sources */,
-				8879720523915FC600062412 /* SearchKeywordProtocol.swift in Sources */,
-				887971FE23915F9600062412 /* FavoriteItem+CoreDataClass.swift in Sources */,
 				8851F3702384E13800AED241 /* FavoriteTableViewController.swift in Sources */,
 				88AF2AAE238EACB500C343DD /* APIManager.swift in Sources */,
 				880A7EE223829F3C005425AE /* AppDelegate.swift in Sources */,
-				8879720323915FC600062412 /* FavoriteItemCoreData.swift in Sources */,
 				88A7183F238F7040005F607A /* SearchTableViewCell.swift in Sources */,
+				883ACF19239A5520003A2A5E /* SearchItemCoreData.swift in Sources */,
 				88AF2AB0238EB38F00C343DD /* APIConstant.swift in Sources */,
 				88AF2AB8238EC10800C343DD /* EmptyTableViewCell.swift in Sources */,
 				88AF2AB2238EB4E000C343DD /* APIConstantProtocol.swift in Sources */,
+				883ACF1E239A5520003A2A5E /* KeywordCoreData.swift in Sources */,
 				8824FEE923892BB400E6263F /* NetworkClient+Constants.swift in Sources */,
-				8879720423915FC600062412 /* SearchKeywordCoreData.swift in Sources */,
 				886411622386BB520073E13E /* SceneDelegate.swift in Sources */,
+				883ACF1A239A5520003A2A5E /* Favorites+CoreDataClass.swift in Sources */,
+				883ACF1D239A5520003A2A5E /* KeywordProtocol.swift in Sources */,
 				886411552386AFE70073E13E /* DataController.swift in Sources */,
 				8824FEEB23892C1100E6263F /* NetworkClientProtocol.swift in Sources */,
+				883ACF1C239A5520003A2A5E /* Keyword+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +502,7 @@
 		};
 		880A7EF623829F3E005425AE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92C65D977B6266C2A1B01B43 /* Pods-Gasungbi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -448,6 +521,7 @@
 		};
 		880A7EF723829F3E005425AE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC839997E06AD2C781FF99E9 /* Pods-Gasungbi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -488,13 +562,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		887971F823915F6E00062412 /* GasungbiM.xcdatamodeld */ = {
+		883ACF05239A4F6C003A2A5E /* GabiM.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				887971F923915F6E00062412 /* GasungbiM.xcdatamodel */,
+				883ACF06239A4F6C003A2A5E /* GabiM.xcdatamodel */,
 			);
-			currentVersion = 887971F923915F6E00062412 /* GasungbiM.xcdatamodel */;
-			path = GasungbiM.xcdatamodeld;
+			currentVersion = 883ACF06239A4F6C003A2A5E /* GabiM.xcdatamodel */;
+			path = GabiM.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

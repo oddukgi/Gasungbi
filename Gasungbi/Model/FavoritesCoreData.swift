@@ -20,18 +20,23 @@ struct FavoritesCoreData: FavoritesProtocol {
 
         var index = 0
         var favorites = Favorites(context: context)
+        var favoriteArray:[Favorites] = []
         selectedItems.forEach { (select) in
             let fav = SearchItemCoreData.shared.addFavoriteItem(searchResult: select, forFavorites: favorites,index: index)
             
+            if fav.title?.isEmpty == true { return }
             favorites = fav
             searchitem.favorites = favorites
             
+            try? context.save()
+ 
+            favoriteArray.append(favorites)
             index += 1
         }
 
         print(selectedItems.count)
-        try! context.save()
-        
+        print(favoriteArray.count)
+      
         return favorites
     }
 
