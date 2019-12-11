@@ -12,7 +12,7 @@ import CoreData
 protocol FavoritesProtocol {
     
     // save keyword
-    func createFavorites(selectedItems: [SearchResults],  forSearch searchitem: SearchItem) -> Favorites
+    func createFavorites(selectedItems: [SearchResults],  forSearch searchitem: SearchItem)
     
     func getFetchedResultsController(fromContext context: NSManagedObjectContext) -> NSFetchedResultsController<Favorites>
 }

@@ -14,25 +14,6 @@ struct SearchItemCoreData: SearchItemProtocol {
     
     static let shared: SearchItemCoreData = SearchItemCoreData()
     
-    func addFavoriteItem(searchResult: SearchResults,forFavorites favorites: Favorites,index: Int) -> Favorites {
-           
-        guard let context = favorites.managedObjectContext else { preconditionFailure("Failed to get favorite context.") }
-           
-          let item = Favorites(context: context)
-          item.title = searchResult.title
-          item.link = searchResult.link
-          item.hprice = searchResult.hprice
-          item.lprice = searchResult.lprice
-          item.image = searchResult.image
-          item.mallName = searchResult.mallName
-          item.image = searchResult.image
-          item.select = true
-          let stringValue = String(index)
-          item.index = stringValue
-          //item.favorites = favorites
-          return favorites
-       }
-    
     
     func saveResults(searchResult: SearchResults,fromContext context: NSManagedObjectContext,index: Int)-> SearchItem {
     

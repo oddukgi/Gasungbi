@@ -1,0 +1,148 @@
+//    func saveFavoriteItemViewContext() {
+//     let request: NSFetchRequest<FavoriteItem> = FavoriteItem.fetchRequest()
+//            request.sortDescriptors = [
+//                        NSSortDescriptor(key: "title", ascending: false)
+//                    ]
+//            DataController.shared.viewContext.perform {
+//                do {
+//                    let favorites = try DataController.shared.viewContext.fetch(request)
+//
+//                    favorites.forEach { (searchResult) in
+//                        FavoriteItemCoreData.shared.addFavoriteItems(results: self.selectedItems,toFavoriteItem: searchResult)
+//                    }
+//
+//                } catch {
+//                    print("Error fetching Pins: \(error)")
+//                }
+//            }
+//    }
+//
+
+
+func getFetchedResultsController(forAlbum album: PhotoAlbum, fromContext context: NSManagedObjectContext) -> NSFetchedResultsController<Photo> {
+
+    let fetchRequest: NSFetchRequest<Photo> = Photo.fetchRequest()
+    let sortDescriptor = NSSortDescriptor(key: "dateCreated", ascending: false)
+    let predicate = NSPredicate(format: "photoAlbum == %@", album)
+    fetchRequest.predicate = predicate
+    fetchRequest.sortDescriptors = [sortDescriptor]
+
+    return NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+}
+
+  @IBAction func addFavoriteItem(_ sender: Any) {
+        
+//        let fetchRequest: NSFetchRequest<FavoriteItem> = FavoriteItem.fetchRequest()
+//        do{
+//
+//            favoriteArray = try self.fetchedFavorites.managedObjectContext.fetch(fetchRequest)
+//            favoriteArray.forEach { (faovriteItem) in
+//                self.fetchedFavorites.managedObjectContext.delete(faovriteItem)
+//
+//            }
+//
+//            favoriteArray.removeAll()
+//
+//            try DataController.shared.viewContext.save()
+//
+//        }
+//        catch
+//        {
+//            print("Could not load save data: \(error.localizedDescription)")
+//        }
+        
+        //print(selectedItems.map {guard $0.isSelected == true else { return } $0.title ?? "";))
+        saveFavoriteItems()
+    }
+
+
+
+/// Deletes multiple selection
+  func deleteFavoriteItem() {
+     
+     
+    if let indexPaths = tableView.indexPathsForSelectedRows  {
+    //Sort the array so it doesn't cause a crash depending on your selection order.
+    let sortedPaths = indexPaths.sorted {$0.row > $1.row}
+         for indexPath in sortedPaths {
+
+             let count = favoriteItem.count
+             var i = count - 1
+             for i in stride(from: i, through: 0, by: -1) {
+
+                 if(indexPath.row == i){
+            
+                     let itemToDelete = favoriteItem[i]
+                     favoriteItem.remove(at: i)
+                     DataController.shared.viewContext.delete(itemToDelete)
+                     try?  DataController.shared.viewContext.save()
+                 }
+             }
+         }
+     
+     if favoriteItem.count == 0 {
+           setFetchedFavoriteController()
+           return
+       }
+     
+    // tableView.deleteRows(at: sortedPaths, with: .automatic)
+     tableView.reloadData()
+        }
+  }
+
+
+
+    func deleteFavoriteItem() {
+        
+        let fetchRequest: NSFetchRequest<Favorites> = Favorites.fetchRequest()
+       if let indexPaths = tableView.indexPathsForSelectedRows  {
+       //Sort the array so it doesn't cause a crash depending on your selection order.
+       let sortedPaths = indexPaths.sorted {$0.row > $1.row}
+            for indexPath in sortedPaths {
+
+                let count = fetchedResultsController.fetchedObjects?.count
+                let i = count! - 1
+                for i in stride(from: i, through: 0, by: -1) {
+
+                    if(indexPath.row == i){
+               
+//                        let itemToDelete = favoriteItem[i]
+//                        favoriteItem.remove(at: i)
+                        do {
+                            let test = try DataController.shared.viewContext.fetch(fetchRequest)
+                            let itemToDelete = test[0] as! NSManagedObject
+                            
+                            DataController.shared.viewContext.delete(itemToDelete)
+                            do {
+                                try  DataController.shared.viewContext.save()
+                            } catch {
+                                print(error)
+                            }
+                            
+                            
+                        }
+                        catch {
+                            print(error)
+                        }
+                    }
+                }
+            }
+        
+        if favoriteItem.count == 0 {
+              setFetchedFavoriteController()
+              return
+          }
+        
+       // tableView.deleteRows(at: sortedPaths, with: .automatic)
+        tableView.reloadData()
+           }
+     }
+
+
+func deleteFavoriteItem(at indexPath: IndexPath) {
+     let itemToDelete = fetchedResultsController.object(at: indexPath)
+     
+     print(indexPath.item)
+     DataController.shared.viewContext.delete(itemToDelete)
+    try? DataController.shared.viewContext.save()
+ }

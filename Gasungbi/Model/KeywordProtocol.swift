@@ -11,6 +11,7 @@ import CoreData
 
 protocol KeywordProtocol {
   
+   func getFetchedResultsController(fromContext context: NSManagedObjectContext) ->NSFetchedResultsController<Keyword>
     // save keyword
    func setKeyword(item: String,usingContext context: NSManagedObjectContext) -> Keyword
    // get fetched results

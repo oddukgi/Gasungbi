@@ -3,20 +3,14 @@
 
 > This app shows Naver shopping search results using the Naver Service API (search).</br> Users can bookmark their favorite items.
 
-## Features 
+## Overview 
+1. Search items and check price on tableview 
+2. User can select favorite items
+3. Just click item, user check detail price
+4. Share detail price link using SNS, etc
 
-- Search any items, and add / delete favorite items
-- Refresh search result and share url 
 
-## Requirements
-
-- Xcode 10.3
-- Swift 5
-
-## Data Model
-![datamodel](image/datamodel.png)
-
-### CocoaPods
+## CocoaPods
 This project have Podfile. You have to enter directory in terminal.
 Type this.
 
@@ -24,7 +18,23 @@ Type this.
 pod install
 ```
 
-## License
-This code is free and open source and I have build this project for my Udacity submission.
+## Screenshot
+
+
+
+
+## Technical Usage
+- Rest API to interact with [Naver Open API](https://developers.naver.com/docs/search/shopping/)
+- Downloading data from network resources 
+- Researching and leveraging a new framework or library  
+   * network library : [Alamofire](https://github.com/Alamofire/Alamofire)
+   * Swift library for downloading and caching images from the web : [Kingfisher](https://github.com/onevcat/Kingfisher)
+   * simple JSON Object mapping library : [ObjectMapper](https://github.com/tristanhimmelman/ObjectMapper)
+- Multiple selection table view
+- Show website using WKWebView
+- Core Data  
+
+
+
 
             

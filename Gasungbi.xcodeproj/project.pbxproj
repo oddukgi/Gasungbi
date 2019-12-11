@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88053B5723A099E7005EFD3D /* FavoriteViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88053B5623A099E7005EFD3D /* FavoriteViewController+Extension.swift */; };
 		8808EEF123864EA400E598B7 /* SearchResultMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8808EEF023864EA400E598B7 /* SearchResultMapper.swift */; };
 		880A7EE223829F3C005425AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880A7EE123829F3C005425AE /* AppDelegate.swift */; };
 		880A7EE923829F3C005425AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 880A7EE723829F3C005425AE /* Main.storyboard */; };
@@ -15,38 +16,40 @@
 		8824FEE723892B9F00E6263F /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8824FEE623892B9F00E6263F /* NetworkClient.swift */; };
 		8824FEE923892BB400E6263F /* NetworkClient+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8824FEE823892BB400E6263F /* NetworkClient+Constants.swift */; };
 		8824FEEB23892C1100E6263F /* NetworkClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8824FEEA23892C1100E6263F /* NetworkClientProtocol.swift */; };
-		883ACF07239A4F6D003A2A5E /* GabiM.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 883ACF05239A4F6C003A2A5E /* GabiM.xcdatamodeld */; };
-		883ACF16239A5520003A2A5E /* Naver Client in Resources */ = {isa = PBXBuildFile; fileRef = 883ACF0B239A5520003A2A5E /* Naver Client */; };
-		883ACF17239A5520003A2A5E /* FavoritesCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ACF0C239A5520003A2A5E /* FavoritesCoreData.swift */; };
-		883ACF18239A5520003A2A5E /* SearchItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ACF0D239A5520003A2A5E /* SearchItem+CoreDataClass.swift */; };
-		883ACF19239A5520003A2A5E /* SearchItemCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ACF0E239A5520003A2A5E /* SearchItemCoreData.swift */; };
-		883ACF1A239A5520003A2A5E /* Favorites+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ACF0F239A5520003A2A5E /* Favorites+CoreDataClass.swift */; };
-		883ACF1B239A5520003A2A5E /* FavoritesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ACF10239A5520003A2A5E /* FavoritesProtocol.swift */; };
-		883ACF1C239A5520003A2A5E /* Keyword+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ACF11239A5520003A2A5E /* Keyword+CoreDataClass.swift */; };
-		883ACF1D239A5520003A2A5E /* KeywordProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ACF12239A5520003A2A5E /* KeywordProtocol.swift */; };
-		883ACF1E239A5520003A2A5E /* KeywordCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ACF13239A5520003A2A5E /* KeywordCoreData.swift */; };
-		883ACF1F239A5520003A2A5E /* Naver Request in Resources */ = {isa = PBXBuildFile; fileRef = 883ACF14239A5520003A2A5E /* Naver Request */; };
-		883ACF20239A5520003A2A5E /* SearchItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ACF15239A5520003A2A5E /* SearchItemProtocol.swift */; };
-		8851F3702384E13800AED241 /* FavoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8851F36F2384E13800AED241 /* FavoriteTableViewController.swift */; };
-		8853B506238C1F3A006F64A3 /* PriceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8853B505238C1F3A006F64A3 /* PriceTableViewController.swift */; };
+		883E9A92239E67D900589D98 /* ResultViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E9A91239E67D900589D98 /* ResultViewController+TableView.swift */; };
+		8845D8302397DA54007C7C38 /* Favorites+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845D82D2397DA53007C7C38 /* Favorites+CoreDataClass.swift */; };
+		8845D8312397DA54007C7C38 /* Keyword+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845D82E2397DA53007C7C38 /* Keyword+CoreDataClass.swift */; };
+		8845D8322397DA54007C7C38 /* SearchItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845D82F2397DA53007C7C38 /* SearchItem+CoreDataClass.swift */; };
+		8845D8342397DEB0007C7C38 /* SearchItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845D8332397DEB0007C7C38 /* SearchItemProtocol.swift */; };
+		8845D8362397DEBD007C7C38 /* FavoritesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845D8352397DEBD007C7C38 /* FavoritesProtocol.swift */; };
+		8845D8382397DEE0007C7C38 /* KeywordProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845D8372397DEE0007C7C38 /* KeywordProtocol.swift */; };
+		8845D83A2397E265007C7C38 /* SearchItemCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845D8392397E265007C7C38 /* SearchItemCoreData.swift */; };
+		8845D83C2397E27F007C7C38 /* FavoritesCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845D83B2397E27F007C7C38 /* FavoritesCoreData.swift */; };
+		8845D83E2397E3CC007C7C38 /* KeywordCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845D83D2397E3CC007C7C38 /* KeywordCoreData.swift */; };
+		8851F3702384E13800AED241 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8851F36F2384E13800AED241 /* FavoriteViewController.swift */; };
+		8853B506238C1F3A006F64A3 /* PriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8853B505238C1F3A006F64A3 /* PriceViewController.swift */; };
 		886411552386AFE70073E13E /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886411542386AFE70073E13E /* DataController.swift */; };
 		886411622386BB520073E13E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886411612386BB520073E13E /* SceneDelegate.swift */; };
-		88A7183F238F7040005F607A /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A7183D238F703F005F607A /* SearchTableViewCell.swift */; };
-		88A71840238F7040005F607A /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88A7183E238F7040005F607A /* SearchTableViewCell.xib */; };
+		88699C97239FB09D00BBF56A /* GabiM.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 88699C95239FB09D00BBF56A /* GabiM.xcdatamodeld */; };
+		88A7183F238F7040005F607A /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A7183D238F703F005F607A /* ResultTableViewCell.swift */; };
+		88A71840238F7040005F607A /* ResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88A7183E238F7040005F607A /* ResultTableViewCell.xib */; };
 		88AF2AAE238EACB500C343DD /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF2AAD238EACB500C343DD /* APIManager.swift */; };
 		88AF2AB0238EB38F00C343DD /* APIConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF2AAF238EB38F00C343DD /* APIConstant.swift */; };
 		88AF2AB2238EB4E000C343DD /* APIConstantProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF2AB1238EB4E000C343DD /* APIConstantProtocol.swift */; };
-		88AF2AB4238EBEA000C343DD /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF2AB3238EBEA000C343DD /* SearchTableViewController.swift */; };
+		88AF2AB4238EBEA000C343DD /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF2AB3238EBEA000C343DD /* ResultViewController.swift */; };
 		88AF2AB7238EC10800C343DD /* EmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88AF2AB5238EC10800C343DD /* EmptyTableViewCell.xib */; };
 		88AF2AB8238EC10800C343DD /* EmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF2AB6238EC10800C343DD /* EmptyTableViewCell.swift */; };
+		88B36FE4239E7CD10007C62C /* KeywordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B36FE3239E7CD10007C62C /* KeywordTableViewCell.swift */; };
 		88E3CA0D2393F1F10090FCB2 /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E3CA0B2393F1F00090FCB2 /* FavoriteTableViewCell.swift */; };
 		88E3CA0E2393F1F10090FCB2 /* FavoriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88E3CA0C2393F1F10090FCB2 /* FavoriteTableViewCell.xib */; };
+		88F46F19239F94C900ABF982 /* garbage_code in Resources */ = {isa = PBXBuildFile; fileRef = 88F46F18239F94C900ABF982 /* garbage_code */; };
 		88F7BE762392B69900A9D203 /* memo in Resources */ = {isa = PBXBuildFile; fileRef = 88F7BE752392B69900A9D203 /* memo */; };
 		88FE77AB2384020F001F6FAD /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FE77AA2384020F001F6FAD /* UIViewController+Extensions.swift */; };
-		8FF7B1E9D6581F68C4461B4C /* Pods_Gasungbi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED88874C197F599A0A3D176B /* Pods_Gasungbi.framework */; };
+		957523AAF032DF23B5F76527 /* Pods_Gasungbi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C684AF159B4543026068C9E1 /* Pods_Gasungbi.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		88053B5623A099E7005EFD3D /* FavoriteViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoriteViewController+Extension.swift"; sourceTree = "<group>"; };
 		8808EEF023864EA400E598B7 /* SearchResultMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultMapper.swift; sourceTree = "<group>"; };
 		880A7EDE23829F3C005425AE /* Gasungbi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gasungbi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		880A7EE123829F3C005425AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,37 +60,38 @@
 		8824FEE623892B9F00E6263F /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		8824FEE823892BB400E6263F /* NetworkClient+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkClient+Constants.swift"; sourceTree = "<group>"; };
 		8824FEEA23892C1100E6263F /* NetworkClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientProtocol.swift; sourceTree = "<group>"; };
-		883ACF06239A4F6C003A2A5E /* GabiM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GabiM.xcdatamodel; sourceTree = "<group>"; };
-		883ACF0B239A5520003A2A5E /* Naver Client */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Naver Client"; path = "Model/Naver Client"; sourceTree = "<group>"; };
-		883ACF0C239A5520003A2A5E /* FavoritesCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesCoreData.swift; path = Model/FavoritesCoreData.swift; sourceTree = "<group>"; };
-		883ACF0D239A5520003A2A5E /* SearchItem+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SearchItem+CoreDataClass.swift"; path = "Model/SearchItem+CoreDataClass.swift"; sourceTree = "<group>"; };
-		883ACF0E239A5520003A2A5E /* SearchItemCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchItemCoreData.swift; path = Model/SearchItemCoreData.swift; sourceTree = "<group>"; };
-		883ACF0F239A5520003A2A5E /* Favorites+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Favorites+CoreDataClass.swift"; path = "Model/Favorites+CoreDataClass.swift"; sourceTree = "<group>"; };
-		883ACF10239A5520003A2A5E /* FavoritesProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesProtocol.swift; path = Model/FavoritesProtocol.swift; sourceTree = "<group>"; };
-		883ACF11239A5520003A2A5E /* Keyword+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Keyword+CoreDataClass.swift"; path = "Model/Keyword+CoreDataClass.swift"; sourceTree = "<group>"; };
-		883ACF12239A5520003A2A5E /* KeywordProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeywordProtocol.swift; path = Model/KeywordProtocol.swift; sourceTree = "<group>"; };
-		883ACF13239A5520003A2A5E /* KeywordCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeywordCoreData.swift; path = Model/KeywordCoreData.swift; sourceTree = "<group>"; };
-		883ACF14239A5520003A2A5E /* Naver Request */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Naver Request"; path = "Model/Naver Request"; sourceTree = "<group>"; };
-		883ACF15239A5520003A2A5E /* SearchItemProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchItemProtocol.swift; path = Model/SearchItemProtocol.swift; sourceTree = "<group>"; };
-		8851F36F2384E13800AED241 /* FavoriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewController.swift; sourceTree = "<group>"; };
-		8853B505238C1F3A006F64A3 /* PriceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceTableViewController.swift; sourceTree = "<group>"; };
+		883E9A91239E67D900589D98 /* ResultViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResultViewController+TableView.swift"; sourceTree = "<group>"; };
+		8845D82D2397DA53007C7C38 /* Favorites+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Favorites+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8845D82E2397DA53007C7C38 /* Keyword+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Keyword+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8845D82F2397DA53007C7C38 /* SearchItem+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SearchItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8845D8332397DEB0007C7C38 /* SearchItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemProtocol.swift; sourceTree = "<group>"; };
+		8845D8352397DEBD007C7C38 /* FavoritesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesProtocol.swift; sourceTree = "<group>"; };
+		8845D8372397DEE0007C7C38 /* KeywordProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordProtocol.swift; sourceTree = "<group>"; };
+		8845D8392397E265007C7C38 /* SearchItemCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemCoreData.swift; sourceTree = "<group>"; };
+		8845D83B2397E27F007C7C38 /* FavoritesCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCoreData.swift; sourceTree = "<group>"; };
+		8845D83D2397E3CC007C7C38 /* KeywordCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordCoreData.swift; sourceTree = "<group>"; };
+		8851F36F2384E13800AED241 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		8853B505238C1F3A006F64A3 /* PriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceViewController.swift; sourceTree = "<group>"; };
 		886411542386AFE70073E13E /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		886411612386BB520073E13E /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		88A7183D238F703F005F607A /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTableViewCell.swift; path = Gasungbi/Cells/SearchTableViewCell.swift; sourceTree = SOURCE_ROOT; };
-		88A7183E238F7040005F607A /* SearchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchTableViewCell.xib; path = Gasungbi/Cells/SearchTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		88699C96239FB09D00BBF56A /* GabiM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GabiM.xcdatamodel; sourceTree = "<group>"; };
+		88A7183D238F703F005F607A /* ResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultTableViewCell.swift; path = Gasungbi/Cells/ResultTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		88A7183E238F7040005F607A /* ResultTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ResultTableViewCell.xib; path = Gasungbi/Cells/ResultTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		88AF2AAD238EACB500C343DD /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		88AF2AAF238EB38F00C343DD /* APIConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstant.swift; sourceTree = "<group>"; };
 		88AF2AB1238EB4E000C343DD /* APIConstantProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstantProtocol.swift; sourceTree = "<group>"; };
-		88AF2AB3238EBEA000C343DD /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		88AF2AB3238EBEA000C343DD /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		88AF2AB5238EC10800C343DD /* EmptyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyTableViewCell.xib; sourceTree = "<group>"; };
 		88AF2AB6238EC10800C343DD /* EmptyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyTableViewCell.swift; sourceTree = "<group>"; };
+		88B36FE3239E7CD10007C62C /* KeywordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordTableViewCell.swift; sourceTree = "<group>"; };
 		88E3CA0B2393F1F00090FCB2 /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		88E3CA0C2393F1F10090FCB2 /* FavoriteTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoriteTableViewCell.xib; sourceTree = "<group>"; };
+		88F46F18239F94C900ABF982 /* garbage_code */ = {isa = PBXFileReference; lastKnownFileType = text; path = garbage_code; sourceTree = "<group>"; };
 		88F7BE752392B69900A9D203 /* memo */ = {isa = PBXFileReference; lastKnownFileType = text; path = memo; sourceTree = "<group>"; };
 		88FE77AA2384020F001F6FAD /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
-		92C65D977B6266C2A1B01B43 /* Pods-Gasungbi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gasungbi.debug.xcconfig"; path = "Target Support Files/Pods-Gasungbi/Pods-Gasungbi.debug.xcconfig"; sourceTree = "<group>"; };
-		AC839997E06AD2C781FF99E9 /* Pods-Gasungbi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gasungbi.release.xcconfig"; path = "Target Support Files/Pods-Gasungbi/Pods-Gasungbi.release.xcconfig"; sourceTree = "<group>"; };
-		ED88874C197F599A0A3D176B /* Pods_Gasungbi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gasungbi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B74267E45E7356C824D07D06 /* Pods-Gasungbi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gasungbi.release.xcconfig"; path = "Target Support Files/Pods-Gasungbi/Pods-Gasungbi.release.xcconfig"; sourceTree = "<group>"; };
+		B90088343ECC6B1784E46C3C /* Pods-Gasungbi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gasungbi.debug.xcconfig"; path = "Target Support Files/Pods-Gasungbi/Pods-Gasungbi.debug.xcconfig"; sourceTree = "<group>"; };
+		C684AF159B4543026068C9E1 /* Pods_Gasungbi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gasungbi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,18 +99,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FF7B1E9D6581F68C4461B4C /* Pods_Gasungbi.framework in Frameworks */,
+				957523AAF032DF23B5F76527 /* Pods_Gasungbi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1138EBB92737B98CB5E593B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C684AF159B4543026068C9E1 /* Pods_Gasungbi.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		71908A0B075290309CA1A09B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				92C65D977B6266C2A1B01B43 /* Pods-Gasungbi.debug.xcconfig */,
-				AC839997E06AD2C781FF99E9 /* Pods-Gasungbi.release.xcconfig */,
+				B90088343ECC6B1784E46C3C /* Pods-Gasungbi.debug.xcconfig */,
+				B74267E45E7356C824D07D06 /* Pods-Gasungbi.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -114,12 +126,13 @@
 		880A7ED523829F3C005425AE = {
 			isa = PBXGroup;
 			children = (
-				883ACF05239A4F6C003A2A5E /* GabiM.xcdatamodeld */,
+				88699C95239FB09D00BBF56A /* GabiM.xcdatamodeld */,
+				88F46F18239F94C900ABF982 /* garbage_code */,
 				88F7BE752392B69900A9D203 /* memo */,
 				880A7EE023829F3C005425AE /* Gasungbi */,
 				880A7EDF23829F3C005425AE /* Products */,
 				71908A0B075290309CA1A09B /* Pods */,
-				F0156CF11F0D0CF2E015DEE1 /* Frameworks */,
+				1138EBB92737B98CB5E593B8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,25 +147,16 @@
 		880A7EE023829F3C005425AE /* Gasungbi */ = {
 			isa = PBXGroup;
 			children = (
-				883ACF0F239A5520003A2A5E /* Favorites+CoreDataClass.swift */,
-				883ACF0C239A5520003A2A5E /* FavoritesCoreData.swift */,
-				883ACF10239A5520003A2A5E /* FavoritesProtocol.swift */,
-				883ACF11239A5520003A2A5E /* Keyword+CoreDataClass.swift */,
-				883ACF13239A5520003A2A5E /* KeywordCoreData.swift */,
-				883ACF12239A5520003A2A5E /* KeywordProtocol.swift */,
-				883ACF0B239A5520003A2A5E /* Naver Client */,
-				883ACF14239A5520003A2A5E /* Naver Request */,
-				883ACF0D239A5520003A2A5E /* SearchItem+CoreDataClass.swift */,
-				883ACF0E239A5520003A2A5E /* SearchItemCoreData.swift */,
-				883ACF15239A5520003A2A5E /* SearchItemProtocol.swift */,
+				88B36FE7239E82F20007C62C /* CustomView */,
+				880A7EE723829F3C005425AE /* Main.storyboard */,
 				886411542386AFE70073E13E /* DataController.swift */,
 				8824FEE523892B7200E6263F /* NetworkClient */,
+				88FE77A9238401B6001F6FAD /* Model */,
 				8853B4F8238C0322006F64A3 /* Cells */,
 				888577EA238AD60000C37042 /* TableView */,
 				88FE77A8238401A1001F6FAD /* Controller */,
 				880A7EE123829F3C005425AE /* AppDelegate.swift */,
 				886411612386BB520073E13E /* SceneDelegate.swift */,
-				880A7EE723829F3C005425AE /* Main.storyboard */,
 				880A7EED23829F3E005425AE /* Assets.xcassets */,
 				880A7EEF23829F3E005425AE /* LaunchScreen.storyboard */,
 				880A7EF223829F3E005425AE /* Info.plist */,
@@ -174,15 +178,34 @@
 			path = NetworkClient;
 			sourceTree = "<group>";
 		};
+		883E9A8F239E66F800589D98 /* Favorite Table View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8851F36F2384E13800AED241 /* FavoriteViewController.swift */,
+				88053B5623A099E7005EFD3D /* FavoriteViewController+Extension.swift */,
+			);
+			path = "Favorite Table View Controller";
+			sourceTree = "<group>";
+		};
+		883E9A90239E670500589D98 /* Result Table View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				88AF2AB3238EBEA000C343DD /* ResultViewController.swift */,
+				883E9A91239E67D900589D98 /* ResultViewController+TableView.swift */,
+			);
+			path = "Result Table View Controller";
+			sourceTree = "<group>";
+		};
 		8853B4F8238C0322006F64A3 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				88E3CA0B2393F1F00090FCB2 /* FavoriteTableViewCell.swift */,
 				88E3CA0C2393F1F10090FCB2 /* FavoriteTableViewCell.xib */,
-				88A7183D238F703F005F607A /* SearchTableViewCell.swift */,
-				88A7183E238F7040005F607A /* SearchTableViewCell.xib */,
+				88A7183D238F703F005F607A /* ResultTableViewCell.swift */,
+				88A7183E238F7040005F607A /* ResultTableViewCell.xib */,
 				88AF2AB6238EC10800C343DD /* EmptyTableViewCell.swift */,
 				88AF2AB5238EC10800C343DD /* EmptyTableViewCell.xib */,
+				88B36FE3239E7CD10007C62C /* KeywordTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -194,23 +217,38 @@
 			path = TableView;
 			sourceTree = "<group>";
 		};
+		88B36FE7239E82F20007C62C /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
 		88FE77A8238401A1001F6FAD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				883E9A90239E670500589D98 /* Result Table View Controller */,
+				883E9A8F239E66F800589D98 /* Favorite Table View Controller */,
 				88FE77AA2384020F001F6FAD /* UIViewController+Extensions.swift */,
-				8851F36F2384E13800AED241 /* FavoriteTableViewController.swift */,
-				8853B505238C1F3A006F64A3 /* PriceTableViewController.swift */,
-				88AF2AB3238EBEA000C343DD /* SearchTableViewController.swift */,
+				8853B505238C1F3A006F64A3 /* PriceViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		F0156CF11F0D0CF2E015DEE1 /* Frameworks */ = {
+		88FE77A9238401B6001F6FAD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				ED88874C197F599A0A3D176B /* Pods_Gasungbi.framework */,
+				8845D82E2397DA53007C7C38 /* Keyword+CoreDataClass.swift */,
+				8845D8372397DEE0007C7C38 /* KeywordProtocol.swift */,
+				8845D83D2397E3CC007C7C38 /* KeywordCoreData.swift */,
+				8845D82F2397DA53007C7C38 /* SearchItem+CoreDataClass.swift */,
+				8845D8332397DEB0007C7C38 /* SearchItemProtocol.swift */,
+				8845D8392397E265007C7C38 /* SearchItemCoreData.swift */,
+				8845D82D2397DA53007C7C38 /* Favorites+CoreDataClass.swift */,
+				8845D8352397DEBD007C7C38 /* FavoritesProtocol.swift */,
+				8845D83B2397E27F007C7C38 /* FavoritesCoreData.swift */,
 			);
-			name = Frameworks;
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,11 +258,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 880A7EF523829F3E005425AE /* Build configuration list for PBXNativeTarget "Gasungbi" */;
 			buildPhases = (
-				4AEF9A95CB40EBEC62A37EBA /* [CP] Check Pods Manifest.lock */,
+				0BF497A0FE0B58D9D3DEF5F2 /* [CP] Check Pods Manifest.lock */,
 				880A7EDA23829F3C005425AE /* Sources */,
 				880A7EDB23829F3C005425AE /* Frameworks */,
 				880A7EDC23829F3C005425AE /* Resources */,
-				3D6C3B115D9BC18330FCE642 /* [CP] Embed Pods Frameworks */,
+				749BCDB1C5791AA244298018 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -278,34 +316,16 @@
 				88AF2AB7238EC10800C343DD /* EmptyTableViewCell.xib in Resources */,
 				88E3CA0E2393F1F10090FCB2 /* FavoriteTableViewCell.xib in Resources */,
 				880A7EEE23829F3E005425AE /* Assets.xcassets in Resources */,
-				883ACF1F239A5520003A2A5E /* Naver Request in Resources */,
 				880A7EE923829F3C005425AE /* Main.storyboard in Resources */,
-				88A71840238F7040005F607A /* SearchTableViewCell.xib in Resources */,
-				883ACF16239A5520003A2A5E /* Naver Client in Resources */,
+				88A71840238F7040005F607A /* ResultTableViewCell.xib in Resources */,
+				88F46F19239F94C900ABF982 /* garbage_code in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3D6C3B115D9BC18330FCE642 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Gasungbi/Pods-Gasungbi-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Gasungbi/Pods-Gasungbi-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gasungbi/Pods-Gasungbi-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4AEF9A95CB40EBEC62A37EBA /* [CP] Check Pods Manifest.lock */ = {
+		0BF497A0FE0B58D9D3DEF5F2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -327,6 +347,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		749BCDB1C5791AA244298018 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gasungbi/Pods-Gasungbi-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gasungbi/Pods-Gasungbi-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gasungbi/Pods-Gasungbi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -334,33 +371,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				883ACF17239A5520003A2A5E /* FavoritesCoreData.swift in Sources */,
+				8845D83C2397E27F007C7C38 /* FavoritesCoreData.swift in Sources */,
+				88B36FE4239E7CD10007C62C /* KeywordTableViewCell.swift in Sources */,
 				8808EEF123864EA400E598B7 /* SearchResultMapper.swift in Sources */,
 				8824FEE723892B9F00E6263F /* NetworkClient.swift in Sources */,
-				883ACF1B239A5520003A2A5E /* FavoritesProtocol.swift in Sources */,
-				883ACF20239A5520003A2A5E /* SearchItemProtocol.swift in Sources */,
-				883ACF07239A4F6D003A2A5E /* GabiM.xcdatamodeld in Sources */,
-				88AF2AB4238EBEA000C343DD /* SearchTableViewController.swift in Sources */,
+				8845D8302397DA54007C7C38 /* Favorites+CoreDataClass.swift in Sources */,
+				88AF2AB4238EBEA000C343DD /* ResultViewController.swift in Sources */,
+				8845D83E2397E3CC007C7C38 /* KeywordCoreData.swift in Sources */,
 				88FE77AB2384020F001F6FAD /* UIViewController+Extensions.swift in Sources */,
-				883ACF18239A5520003A2A5E /* SearchItem+CoreDataClass.swift in Sources */,
+				8845D8342397DEB0007C7C38 /* SearchItemProtocol.swift in Sources */,
+				8845D8322397DA54007C7C38 /* SearchItem+CoreDataClass.swift in Sources */,
+				88699C97239FB09D00BBF56A /* GabiM.xcdatamodeld in Sources */,
 				88E3CA0D2393F1F10090FCB2 /* FavoriteTableViewCell.swift in Sources */,
-				8853B506238C1F3A006F64A3 /* PriceTableViewController.swift in Sources */,
-				8851F3702384E13800AED241 /* FavoriteTableViewController.swift in Sources */,
+				8845D8312397DA54007C7C38 /* Keyword+CoreDataClass.swift in Sources */,
+				8853B506238C1F3A006F64A3 /* PriceViewController.swift in Sources */,
+				8845D83A2397E265007C7C38 /* SearchItemCoreData.swift in Sources */,
+				8851F3702384E13800AED241 /* FavoriteViewController.swift in Sources */,
 				88AF2AAE238EACB500C343DD /* APIManager.swift in Sources */,
 				880A7EE223829F3C005425AE /* AppDelegate.swift in Sources */,
-				88A7183F238F7040005F607A /* SearchTableViewCell.swift in Sources */,
-				883ACF19239A5520003A2A5E /* SearchItemCoreData.swift in Sources */,
+				88053B5723A099E7005EFD3D /* FavoriteViewController+Extension.swift in Sources */,
+				88A7183F238F7040005F607A /* ResultTableViewCell.swift in Sources */,
 				88AF2AB0238EB38F00C343DD /* APIConstant.swift in Sources */,
 				88AF2AB8238EC10800C343DD /* EmptyTableViewCell.swift in Sources */,
 				88AF2AB2238EB4E000C343DD /* APIConstantProtocol.swift in Sources */,
-				883ACF1E239A5520003A2A5E /* KeywordCoreData.swift in Sources */,
 				8824FEE923892BB400E6263F /* NetworkClient+Constants.swift in Sources */,
+				883E9A92239E67D900589D98 /* ResultViewController+TableView.swift in Sources */,
 				886411622386BB520073E13E /* SceneDelegate.swift in Sources */,
-				883ACF1A239A5520003A2A5E /* Favorites+CoreDataClass.swift in Sources */,
-				883ACF1D239A5520003A2A5E /* KeywordProtocol.swift in Sources */,
 				886411552386AFE70073E13E /* DataController.swift in Sources */,
 				8824FEEB23892C1100E6263F /* NetworkClientProtocol.swift in Sources */,
-				883ACF1C239A5520003A2A5E /* Keyword+CoreDataClass.swift in Sources */,
+				8845D8362397DEBD007C7C38 /* FavoritesProtocol.swift in Sources */,
+				8845D8382397DEE0007C7C38 /* KeywordProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,7 +542,7 @@
 		};
 		880A7EF623829F3E005425AE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 92C65D977B6266C2A1B01B43 /* Pods-Gasungbi.debug.xcconfig */;
+			baseConfigurationReference = B90088343ECC6B1784E46C3C /* Pods-Gasungbi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -521,7 +561,7 @@
 		};
 		880A7EF723829F3E005425AE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AC839997E06AD2C781FF99E9 /* Pods-Gasungbi.release.xcconfig */;
+			baseConfigurationReference = B74267E45E7356C824D07D06 /* Pods-Gasungbi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -562,12 +602,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		883ACF05239A4F6C003A2A5E /* GabiM.xcdatamodeld */ = {
+		88699C95239FB09D00BBF56A /* GabiM.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				883ACF06239A4F6C003A2A5E /* GabiM.xcdatamodel */,
+				88699C96239FB09D00BBF56A /* GabiM.xcdatamodel */,
 			);
-			currentVersion = 883ACF06239A4F6C003A2A5E /* GabiM.xcdatamodel */;
+			currentVersion = 88699C96239FB09D00BBF56A /* GabiM.xcdatamodel */;
 			path = GabiM.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

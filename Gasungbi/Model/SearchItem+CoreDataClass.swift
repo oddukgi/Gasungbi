@@ -15,7 +15,6 @@ class SearchItem: NSManagedObject {
     override func awakeFromInsert() {
         super.awakeFromInsert()
         select = false
-//        favorites = Favorites(context: managedObjectContext!)
-//        keyword = Keyword(context: managedObjectContext!)
+
     }
 }

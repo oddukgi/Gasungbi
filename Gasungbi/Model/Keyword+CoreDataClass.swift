@@ -9,9 +9,10 @@
 import Foundation
 import CoreData
 
-
 class Keyword: NSManagedObject {
     override func awakeFromInsert() {
         super.awakeFromInsert()
+        date = Date()
+        keyword = ""
     }
 }

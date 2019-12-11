@@ -10,16 +10,26 @@ import Foundation
 import CoreData
 
 struct KeywordCoreData: KeywordProtocol {
-  
-    static let shared: KeywordCoreData = KeywordCoreData()
     
-    // save keyword
+    static let shared: KeywordCoreData = KeywordCoreData()
+
+     func getFetchedResultsController(fromContext context: NSManagedObjectContext) ->NSFetchedResultsController<Keyword>
+     {
+         let fetchRequest: NSFetchRequest<Keyword> = Keyword.fetchRequest()
+         let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
+         fetchRequest.sortDescriptors = [sortDescriptor]
+         
+         return NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context,sectionNameKeyPath: nil, cacheName: nil)
+     }
+            
     func setKeyword(item: String, usingContext context: NSManagedObjectContext) -> Keyword {
         let keyword = Keyword(context: context)
-        keyword.recentString = item
+        keyword.keyword = item
         
         return keyword
     }
+    
+    
    // get fetched results
     func deleteKeyword(keyword: Keyword, fromContext context: NSManagedObjectContext) {
         context.delete(keyword)

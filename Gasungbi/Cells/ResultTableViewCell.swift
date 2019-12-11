@@ -12,11 +12,12 @@ import Kingfisher
 protocol  LabelForm: class {
     func updateLabel()
 }
-class SearchTableViewCell: UITableViewCell,LabelForm {
+class ResultTableViewCell: UITableViewCell,LabelForm {
 
     @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var itemLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    
     var priceformatter = PriceFormatter()
     
     override func awakeFromNib() {

@@ -12,7 +12,8 @@
         <relationship name="searchitems" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SearchItems" inverseName="favorites" inverseEntity="SearchItems"/>
     </entity>
     <entity name="Keyword" representedClassName=".Keyword" syncable="YES" codeGenerationType="category">
-        <attribute name="recentString" optional="YES" attributeType="String"/>
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="keyword" optional="YES" attributeType="String"/>
         <relationship name="searchitems" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SearchItems" inverseName="keyword" inverseEntity="SearchItems"/>
     </entity>
     <entity name="SearchItems" representedClassName=".SearchItem" syncable="YES" codeGenerationType="category">
@@ -29,7 +30,7 @@
     </entity>
     <elements>
         <element name="Favorites" positionX="-1178.77734375" positionY="-122.609375" width="128" height="178"/>
-        <element name="Keyword" positionX="-1655.9375" positionY="-5.125" width="128" height="73"/>
+        <element name="Keyword" positionX="-1655.9375" positionY="-5.125" width="128" height="88"/>
         <element name="SearchItems" positionX="-1414.39453125" positionY="-125.5078125" width="128" height="193"/>
     </elements>
 </model>

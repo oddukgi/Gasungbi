@@ -46,7 +46,7 @@ struct NetworkClient: NetworkClientProtocol {
             }
             
             // data print
-            let str = String(data: data, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue)) ?? ""
+            _ = String(data: data, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue)) ?? ""
            // print(str)
             
             completionHandler(data, nil)

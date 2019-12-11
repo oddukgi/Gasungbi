@@ -1,0 +1,33 @@
+
+extension ResultViewController: UISearchBarDelegate {
+    
+    // MARK: - Methods
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.totalCount = 0
+        self.pageCount = 1
+
+        self.keyword = searchBar.text!
+        guard let query = searchBar.text, query.trimmingCharacters(in: .whitespaces) != "" else {
+            self.cellData.removeAll()
+            self.tableView.reloadData()
+            return
+        }
+
+        // I want to show
+       // recentKeyword = KeywordCoreData.shared.setKeyword(item: keyword, usingContext: DataController.shared.viewContext)
+    
+        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(self.reload(_:)), object: searchBar)
+        perform(#selector(self.reload(_:)), with: searchBar, afterDelay: 0.2)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.searchBar.resignFirstResponder()
+    }
+    
+    @objc func reload(_ searchBar: UISearchBar) {
+        if searchBar.text != "" {
+            self.configureTable(data: [SearchResults]())
+        }
+    }
+    
+}

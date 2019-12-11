@@ -11,44 +11,52 @@ import CoreData
 
     // save keyword
 struct FavoritesCoreData: FavoritesProtocol {
+
     
     static let shared: FavoritesCoreData = FavoritesCoreData()
  
     // save keyword
-    func createFavorites(selectedItems: [SearchResults], forSearch searchitem: SearchItem) -> Favorites {
+    func createFavorites(selectedItems: [SearchResults], forSearch searchitem: SearchItem) {
         guard let context = searchitem.managedObjectContext else { preconditionFailure("SearchItem does not have a context.") }
 
         var index = 0
-        var favorites = Favorites(context: context)
-        var favoriteArray:[Favorites] = []
+       
         selectedItems.forEach { (select) in
-            let fav = SearchItemCoreData.shared.addFavoriteItem(searchResult: select, forFavorites: favorites,index: index)
-            
-            if fav.title?.isEmpty == true { return }
-            favorites = fav
+            let favorites = Favorites(context: context)
+            favorites.setValue(select.title, forKey: "title")
+            favorites.setValue(select.link, forKey: "link")
+            favorites.setValue(select.hprice, forKey: "hprice")
+            favorites.setValue(select.lprice, forKey: "lprice")
+            favorites.setValue(select.image, forKey: "image")
+            favorites.setValue(select.mallName, forKey: "mallName")
+            let stringIndex = String(index)
+            favorites.setValue(stringIndex, forKey: "index")
+            favorites.setValue(true, forKey: "select")
             searchitem.favorites = favorites
-            
-            try? context.save()
- 
-            favoriteArray.append(favorites)
+
             index += 1
         }
-
-        print(selectedItems.count)
-        print(favoriteArray.count)
-      
-        return favorites
+         // 값을 설정한 뒤에 Core Data에 저장한다.
+        do {
+            try context.save()
+            
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+        
     }
+    
 
-    func getFetchedResultsController(fromContext context: NSManagedObjectContext) -> NSFetchedResultsController<Favorites>
-      {
+    func getFetchedResultsController(fromContext context: NSManagedObjectContext) ->NSFetchedResultsController<Favorites>
+    {
           let fetchRequest: NSFetchRequest<Favorites> = Favorites.fetchRequest()
-          let sortDescriptor = NSSortDescriptor(key: "title", ascending: false)
-//          let predicate = NSPredicate(format: "searchitemx == %@", searchitem)
+          let sortDescriptor = NSSortDescriptor(key: "index", ascending: true)
+ //         let predicate = NSPredicate(format: "searchitemx == %@", searchitem)
 //          fetchRequest.predicate = predicate
           fetchRequest.sortDescriptors = [sortDescriptor]
           
-          return NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-      }
-      
+          return NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context,sectionNameKeyPath: nil, cacheName: nil)
+    }
+          
+  
 }
