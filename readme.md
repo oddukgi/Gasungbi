@@ -9,6 +9,11 @@ When click table row, it shows detail price information.</br> User can share pri
 2. User can select favorite items
 3. Just click item, user check detail price
 4. Share detail price link using memo and SNS
+---
+1) 제품명을 입력하면, 바로 네이버쇼핑의 최저가를 테이블에서 볼 수 있습니다.
+2) 사용자는 좋아하는 아이템을 선택하여, 따로 담아둘 수 있습니다.
+3) 아이템을 클릭하면 타사이트 가격정보를 볼 수 있습니다.
+4) 가격 정보 링크는 SNS와 메모장에 공유할 수 있습니다.
 
 ## CocoaPods
 This project have Podfile. You have to enter directory in terminal.
