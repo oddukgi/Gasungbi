@@ -32,7 +32,7 @@ pod install
    * simple JSON Object mapping library : [ObjectMapper](https://github.com/tristanhimmelman/ObjectMapper)
 - Multiple select table view 
 - Show website using WKWebView
-- Keep favorite item list using Core Data 
+- Keep favorites list using Core Data 
 
 
 
