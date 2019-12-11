@@ -65,7 +65,7 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-    
+
         return indexPath
     }
 

@@ -51,7 +51,7 @@ extension ResultViewController: UITableViewDelegate, UITableViewDataSource {
     
     //MARK: - get data index
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        if selectedItems.count > 9 {
+        if selectedItems.count > 10 {
             return nil
         }
         print("index array: \(indexPath.item)")

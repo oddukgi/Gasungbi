@@ -10,7 +10,6 @@ When click table row, it shows detail price information.</br> User can share pri
 3. Just click item, user check detail price
 4. Share detail price link using memo and SNS
 
-
 ## CocoaPods
 This project have Podfile. You have to enter directory in terminal.
 Type this.
@@ -19,10 +18,10 @@ Type this.
 pod install
 ```
 
-## Screenshot
-
-
-
+## Video
+<p float="left">
+  <img src="./video/gasungbi-video.gif" width="250"/>
+</p>
 
 ## Technical Usage
 - Rest API to interact with [Naver Open API](https://developers.naver.com/docs/search/shopping/)
