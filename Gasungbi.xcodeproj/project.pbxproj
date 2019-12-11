@@ -45,7 +45,6 @@
 		88F46F19239F94C900ABF982 /* garbage_code in Resources */ = {isa = PBXBuildFile; fileRef = 88F46F18239F94C900ABF982 /* garbage_code */; };
 		88F7BE762392B69900A9D203 /* memo in Resources */ = {isa = PBXBuildFile; fileRef = 88F7BE752392B69900A9D203 /* memo */; };
 		88FE77AB2384020F001F6FAD /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FE77AA2384020F001F6FAD /* UIViewController+Extensions.swift */; };
-		957523AAF032DF23B5F76527 /* Pods_Gasungbi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C684AF159B4543026068C9E1 /* Pods_Gasungbi.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,9 +88,6 @@
 		88F46F18239F94C900ABF982 /* garbage_code */ = {isa = PBXFileReference; lastKnownFileType = text; path = garbage_code; sourceTree = "<group>"; };
 		88F7BE752392B69900A9D203 /* memo */ = {isa = PBXFileReference; lastKnownFileType = text; path = memo; sourceTree = "<group>"; };
 		88FE77AA2384020F001F6FAD /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
-		B74267E45E7356C824D07D06 /* Pods-Gasungbi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gasungbi.release.xcconfig"; path = "Target Support Files/Pods-Gasungbi/Pods-Gasungbi.release.xcconfig"; sourceTree = "<group>"; };
-		B90088343ECC6B1784E46C3C /* Pods-Gasungbi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gasungbi.debug.xcconfig"; path = "Target Support Files/Pods-Gasungbi/Pods-Gasungbi.debug.xcconfig"; sourceTree = "<group>"; };
-		C684AF159B4543026068C9E1 /* Pods_Gasungbi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gasungbi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,26 +95,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				957523AAF032DF23B5F76527 /* Pods_Gasungbi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1138EBB92737B98CB5E593B8 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C684AF159B4543026068C9E1 /* Pods_Gasungbi.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		71908A0B075290309CA1A09B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B90088343ECC6B1784E46C3C /* Pods-Gasungbi.debug.xcconfig */,
-				B74267E45E7356C824D07D06 /* Pods-Gasungbi.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -132,7 +117,6 @@
 				880A7EE023829F3C005425AE /* Gasungbi */,
 				880A7EDF23829F3C005425AE /* Products */,
 				71908A0B075290309CA1A09B /* Pods */,
-				1138EBB92737B98CB5E593B8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -258,11 +242,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 880A7EF523829F3E005425AE /* Build configuration list for PBXNativeTarget "Gasungbi" */;
 			buildPhases = (
-				0BF497A0FE0B58D9D3DEF5F2 /* [CP] Check Pods Manifest.lock */,
 				880A7EDA23829F3C005425AE /* Sources */,
 				880A7EDB23829F3C005425AE /* Frameworks */,
 				880A7EDC23829F3C005425AE /* Resources */,
-				749BCDB1C5791AA244298018 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -323,48 +305,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		0BF497A0FE0B58D9D3DEF5F2 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Gasungbi-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		749BCDB1C5791AA244298018 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Gasungbi/Pods-Gasungbi-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Gasungbi/Pods-Gasungbi-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gasungbi/Pods-Gasungbi-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		880A7EDA23829F3C005425AE /* Sources */ = {
@@ -542,7 +482,6 @@
 		};
 		880A7EF623829F3E005425AE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B90088343ECC6B1784E46C3C /* Pods-Gasungbi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -561,7 +500,6 @@
 		};
 		880A7EF723829F3E005425AE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B74267E45E7356C824D07D06 /* Pods-Gasungbi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
