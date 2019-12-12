@@ -69,44 +69,5 @@ class FavoriteViewController: UIViewController {
         self.tableView.register(UINib(nibName: "FavoriteTableViewCell", bundle: nil), forCellReuseIdentifier: "FavoriteTableViewCell")
     }
 
-        func deleteFavoriteItem() {
-            
-           if let indexPaths = tableView.indexPathsForSelectedRows  {
-           //Sort the array so it doesn't cause a crash depending on your selection order.
-           let sortedPaths = indexPaths.sorted {$0.row > $1.row}
-                for indexPath in sortedPaths {
-
-                    let count = fetchedResultsController.fetchedObjects?.count
-                    let i = count! - 1
-                    for i in stride(from: i, through: 0, by: -1) {
-
-                        if(indexPath.row == i){
-    
-                            let itemToDelete = favoriteItem[i]
-                            favoriteItem.remove(at: i)
-                            DataController.shared.viewContext.delete(itemToDelete)
-                            do {
-                                try  DataController.shared.viewContext.save()
-                            } catch {
-                                print(error)
-                            }
-
-                        }
-                    }
-                }
-            
-            if favoriteItem.count == 0 {
-                setFetchedFavoriteController()
-                return
-            }
-            
-            tableView.reloadData()
-            }
-         }
-// MARK: - delete items for multiple selection
-    @IBAction func deleteItems(_ sender: Any) {
-        deleteFavoriteItem()
-    }
-    
 }
 

@@ -59,7 +59,6 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
     
     // MARK: - select / deselct item
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        // 북마크된 데이터를 갯수만큼 받아서 출력하기
         let currentItem = fetchedResultsController.sections?[0].numberOfObjects
         print(currentItem!)
     }
@@ -68,39 +67,31 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
 
         return indexPath
     }
-
-     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        
-        let cell = tableView.cellForRow(at: indexPath) as! FavoriteTableViewCell
-        cell.priceLabel.textColor = .blue
-      
-        let selectedCell:UITableViewCell = tableView.cellForRow(at: indexPath)!
-        selectedCell.contentView.backgroundColor = .lightGray
-
-      }
-       
-       func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         
-        let cell = tableView.cellForRow(at: indexPath) as! FavoriteTableViewCell
-        cell.priceLabel.textColor = .red
+        let currentItem = fetchedResultsController.object(at: indexPath)
+        let title = currentItem.title!
+        let url = currentItem.link!
+        let priceVC = self.storyboard?.instantiateViewController(withIdentifier: "showPrice") as! PriceViewController
         
-        let selectedCell:UITableViewCell = tableView.cellForRow(at: indexPath)!
-        selectedCell.contentView.backgroundColor = .clear
-
-       }
-       
-       func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        priceVC.detailUrl = url
+        priceVC.itemName = title
+        navigationController?.pushViewController(priceVC, animated: true)
         
-           let currentItem = fetchedResultsController.object(at: indexPath)
-            let title = currentItem.title!
-           let url = currentItem.link!
-           let priceVC = self.storyboard?.instantiateViewController(withIdentifier: "showPrice") as! PriceViewController
-           
-           priceVC.detailUrl = url
-           priceVC.itemName = title
-           navigationController?.pushViewController(priceVC, animated: true)
-                 
-       }
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath)-> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title:  "delete", handler: {(ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            let itemToDelete = self.fetchedResultsController.object(at: indexPath)
+                
+            print(indexPath.item)
+            DataController.shared.viewContext.delete(itemToDelete)
+            try? DataController.shared.viewContext.save()
+            success(true)
+        })
+        return UISwipeActionsConfiguration(actions:[deleteAction])
+    }
 }
 
 

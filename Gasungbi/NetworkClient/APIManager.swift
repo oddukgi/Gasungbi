@@ -12,46 +12,33 @@ import Alamofire
 import AlamofireObjectMapper
 
 // MARK: - APIManager
+
 class APIManager: APIConstant {
    
-       // MARK: - SearchResultsGroup
-       // MARK: Methods
-    
-    static func search(item: String, _ completion: @escaping (DataResponse<SearchResultsGroup>) -> Void) {        let urlString: String = APIConstant.shared.url(item)
+    // MARK: - Methods
+    static func search(item: String, _ completion: @escaping (DataResponse<SearchResultsGroup>,Error?) -> Void) {
+        
+           let urlString: String = APIConstant.shared.url(item)
            
            let header = ["X-Naver-Client-Id":"YaRtVe3njeHDoaI5TIwg",
                          "X-Naver-Client-Secret":"cacuTTxDDY"]
            
            Alamofire.request(urlString, headers: header).validate(statusCode: 200 ..< 500).responseObject { (response: DataResponse<SearchResultsGroup>) in
-                         switch response.result {
-                         case .success:
-                             completion(response)
-                             
-                         case .failure(let error):
-                             print("Failed Request [getRepoData] - \(error)")
-                         }
-                     }
-       }
+                switch response.result {
+                case .success:
+                    completion(response,nil)
+                    
+                case .failure(let error):
+                
+                if let err = error as? URLError, err.code  == URLError.Code.notConnectedToInternet{
+                        completion(response,error)
+                        print("Failed Request [getData] - \(error)")
+                    }else{
+                        completion(response,error)
+                        print("Failed Request [getData] - \(error)")
+                    }
+                }
+            }
+        }
        
-       
-//       static func getRepoData(repoURL: String, _ completion: @escaping (DataResponse<Repo>) -> Void) {
-//
-//
-//        let header = ["X-Naver-Client-Id":"YaRtVe3njeHDoaI5TIwg",
-//                      "X-Naver-Client-Secret":"cacuTTxDDY"]
-//           let headers: HTTPHeaders = self.getAccessToken()
-//
-//           Alamofire.request(repoURL, headers: header).validate(statusCode: 200 ..< 500).responseObject { (response: DataResponse<Repo>) in
-//               switch response.result {
-//               case .success:
-//                   completion(response)
-//
-//               case .failure(let error):
-//                   print("Failed Request [getRepoData] - \(error)")
-//               }
-//           }
-//       }
-
-
-
 }

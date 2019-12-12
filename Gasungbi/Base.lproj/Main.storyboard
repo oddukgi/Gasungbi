@@ -91,7 +91,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Sj3-RS-Zyg">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Sj3-RS-Zyg">
                                 <rect key="frame" x="0.0" y="88" width="375" height="641"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
@@ -111,13 +111,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FLc-9H-m6P"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Favorite Item" id="3eo-vD-q0O">
-                        <barButtonItem key="rightBarButtonItem" title="Trash" image="trash" catalog="system" id="Dx6-pA-yAd">
-                            <connections>
-                                <action selector="deleteItems:" destination="JHk-3E-aDl" id="4VH-4y-cvh"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Favorite Item" id="3eo-vD-q0O"/>
                     <connections>
                         <outlet property="tableView" destination="Sj3-RS-Zyg" id="LUg-TU-u58"/>
                     </connections>
@@ -207,6 +201,5 @@
         <image name="icon-favorite-deselected" width="29" height="29"/>
         <image name="icon-favorite-selected" width="29" height="29"/>
         <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
-        <image name="trash" catalog="system" width="60" height="64"/>
     </resources>
 </document>

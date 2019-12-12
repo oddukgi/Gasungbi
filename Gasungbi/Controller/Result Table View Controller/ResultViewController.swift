@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 
+
 class ResultViewController: UIViewController, NSFetchedResultsControllerDelegate {
 
     // MARK: - Properties
@@ -21,7 +22,6 @@ class ResultViewController: UIViewController, NSFetchedResultsControllerDelegate
     var keyword: String = ""
     var cellData = [SearchResults]()
     var searchItem: SearchItem!
-
     // MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +45,9 @@ class ResultViewController: UIViewController, NSFetchedResultsControllerDelegate
                                                      name: NSNotification.Name("searchBarResignFirstResponder"),
                                                      object: nil)
        }
+    
        
+
     // MARK: - Notification Methods
     // close keyboard
      @objc private func searchBarResignFirstResponder() {
@@ -56,7 +58,6 @@ class ResultViewController: UIViewController, NSFetchedResultsControllerDelegate
        
     override func viewWillAppear(_ animated: Bool) {
         navigationItem.hidesSearchBarWhenScrolling = false
-        //subscribeToKeyboardNotifications()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -83,23 +84,37 @@ class ResultViewController: UIViewController, NSFetchedResultsControllerDelegate
     // MARK: - Search Keyword
     func configureTable(data: [SearchResults]) {
         
-        self.showIndicator()
-        APIManager.search(item: self.keyword) { searchResult in
-            if let count = searchResult.value?.total { self.totalCount = Int(count)! }
-            if let results = searchResult.value?.items {
-                self.cellData = data.isEmpty ? [SearchResults]() : self.cellData
-                
-                for result in results {
-                    self.cellData.append(result)
-                }
-                self.tableView.reloadData()
-                
+       
+        APIManager.search(item: self.keyword) { searchResult,error in
+        
+            if searchResult.result.isFailure == true {
+                                    
                 self.hideIndicator()
+                self.cellData.removeAll()
+                self.tableView.reloadData()
+                self.presentErrorAlert(title: "Failed to get data", message: error!.localizedDescription)
             }
             else {
-                print("Empty searchResult.value")
+                self.showIndicator()
+                if let count = searchResult.value?.total { self.totalCount = Int(count)! }
+                if let results = searchResult.value?.items {
+                    self.cellData = data.isEmpty ? [SearchResults]() : self.cellData
+                
+                    for result in results {
+                        self.cellData.append(result)
+                    }
+                   self.tableView.reloadData()
+                    
+                    self.hideIndicator()
+                }
+                else {
+                    
+                    print("Empty searchResult.value")
+                }
+                
             }
         }
+
     }
     
     var selectedItems: [SearchResults] {
@@ -118,10 +133,9 @@ class ResultViewController: UIViewController, NSFetchedResultsControllerDelegate
 
        do {
            try DataController.shared.viewContext.save()
+        
        } catch let error as NSError  {
            print("Could not save \(error), \(error.userInfo)")
-       } catch {
-           // add general error handle here
        }
 
     }
@@ -138,8 +152,7 @@ class ResultViewController: UIViewController, NSFetchedResultsControllerDelegate
             print("Error saving new pin: \(error)")
         }
     }
-  
-    
+
     @IBAction func addFavoriteItem(_ sender: Any) {
         
         guard selectedItems.count > 0 else { return }
@@ -152,13 +165,6 @@ class ResultViewController: UIViewController, NSFetchedResultsControllerDelegate
        self.tableView.reloadData()
     }
     
-    func reload(recentKey: String) {
-        
-        if recentKey.count > 0 {
-            keyword = recentKey
-            self.configureTable(data: [SearchResults]())
-        }
-    }
     
     // MARK: - Indicator Methods
     private func showIndicator() {
@@ -183,6 +189,7 @@ extension ResultViewController: UISearchBarDelegate {
         guard let query = searchBar.text, query.trimmingCharacters(in: .whitespaces) != "" else {
             self.cellData.removeAll()
             self.tableView.reloadData()
+            hideIndicator()
             return
         }
         
@@ -192,14 +199,21 @@ extension ResultViewController: UISearchBarDelegate {
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.searchBar.resignFirstResponder()
+        if searchBar.text != "" {
+                  
+           self.configureTable(data: [SearchResults]())
+        }
     }
 
     @objc func reload(_ searchBar: UISearchBar) {
+       
         if searchBar.text != "" {
             
             self.configureTable(data: [SearchResults]())
         }
     }
+
+   
 
 }
 

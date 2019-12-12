@@ -46,15 +46,6 @@ class ResultTableViewCell: UITableViewCell,LabelForm {
         
     }
 
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//
-//        if selected {
-//            self.backgroundColor = .gray
-//        } else {
-//            self.backgroundColor = .none
-//        }
-//    }
 }
 // 참고: 친절한 어플리케이션(1) - 입력된 숫자를 콤마로 구분하기 https://baked-corn.tistory.com/76
 
