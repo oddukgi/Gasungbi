@@ -22,6 +22,10 @@ Type this.
 ```ruby
 pod install
 ```
+---
+## Notice
+When loading website didn't show, see this [issues board](https://github.com/sunmiya5/Gasungbi/issues/4)</br>
+Website is from Korea, and loading speed is different by country
 
 ## Video
 <p float="left">
