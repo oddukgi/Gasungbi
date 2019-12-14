@@ -25,7 +25,7 @@ pod install
 
 ## Video
 <p float="left">
-  <img src="./video/gasungbi.gif"/>
+  <img src="./video/gasungbi_new.gif"/>
 </p>
 
 ## Technical Usage
