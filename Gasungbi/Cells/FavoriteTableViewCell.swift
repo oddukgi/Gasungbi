@@ -34,8 +34,8 @@ class FavoriteTableViewCell: UITableViewCell,Label {
             self.itemImageView.kf.setImage(with: URL(string: imageURL))
         }
             
-//      print(self.favoriteItem.title!)
-//      print(self.favoriteItem.lprice!)
+//      debugPrint(self.favoriteItem.title!)
+//      debugPrint(self.favoriteItem.lprice!)
     
         self.itemLabel.text = self.favoriteItem.title
         self.priceLabel.text = self.favoriteItem.lprice

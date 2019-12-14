@@ -54,7 +54,7 @@ extension ResultViewController: UITableViewDelegate, UITableViewDataSource {
         if selectedItems.count > 10 {
             return nil
         }
-        print("index array: \(indexPath.item)")
+        debugPrint("index array: \(indexPath.item)")
         return indexPath
     }
 
@@ -63,10 +63,6 @@ extension ResultViewController: UITableViewDelegate, UITableViewDataSource {
         guard self.cellData.count > 0 else {
             return
         }
-         let cell = tableView.cellForRow(at: indexPath) as! ResultTableViewCell
-         cell.priceLabel.textColor = .blue
-         let selectedCell:UITableViewCell = tableView.cellForRow(at: indexPath)!
-         selectedCell.contentView.backgroundColor = .lightGray
          self.cellData[indexPath.row].isSelected = true
      }
        
@@ -74,13 +70,8 @@ extension ResultViewController: UITableViewDelegate, UITableViewDataSource {
            guard self.cellData.count > 0 else {
                return
            }
-        
-            let cell = tableView.cellForRow(at: indexPath) as! ResultTableViewCell
-            cell.priceLabel.textColor = .red
-        
-            let selectedCell:UITableViewCell = tableView.cellForRow(at: indexPath)!
-            selectedCell.contentView.backgroundColor = .clear
-            self.cellData[indexPath.row].isSelected = false
+           
+           self.cellData[indexPath.row].isSelected = false
        }
        
     //when select row, url website opened

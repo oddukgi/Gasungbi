@@ -41,7 +41,7 @@ struct FavoritesCoreData: FavoritesProtocol {
             try context.save()
             
         } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
+            debugPrint("Could not save. \(error), \(error.userInfo)")
         }
         
     }

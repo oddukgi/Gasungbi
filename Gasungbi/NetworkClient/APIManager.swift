@@ -32,10 +32,10 @@ class APIManager: APIConstant {
                 
                 if let err = error as? URLError, err.code  == URLError.Code.notConnectedToInternet{
                         completion(response,error)
-                        print("Failed Request [getData] - \(error)")
+                        debugPrint("Failed Request [getData] - \(error)")
                     }else{
                         completion(response,error)
-                        print("Failed Request [getData] - \(error)")
+                        debugPrint("Failed Request [getData] - \(error)")
                     }
                 }
             }

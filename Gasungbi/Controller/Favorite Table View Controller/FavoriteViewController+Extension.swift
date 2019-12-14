@@ -44,7 +44,7 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
             
             if let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteTableViewCell", for: indexPath) as? FavoriteTableViewCell {
                 
-               print(currentItem.title!)
+               debugPrint(currentItem.title!)
                currentItem.title = currentItem.title!
                cell.favoriteItem = currentItem
                cell.configure()
@@ -60,7 +60,7 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
     // MARK: - select / deselct item
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let currentItem = fetchedResultsController.sections?[0].numberOfObjects
-        print(currentItem!)
+        debugPrint(currentItem!)
     }
 
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
@@ -85,7 +85,7 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
         let deleteAction = UIContextualAction(style: .destructive, title:  "delete", handler: {(ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
             let itemToDelete = self.fetchedResultsController.object(at: indexPath)
                 
-            print(indexPath.item)
+            debugPrint(indexPath.item)
             DataController.shared.viewContext.delete(itemToDelete)
             try? DataController.shared.viewContext.save()
             success(true)

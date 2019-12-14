@@ -24,7 +24,7 @@ class FavoriteViewController: UIViewController {
         do {
             try fetchedResultsController.performFetch()
             favoriteItem = fetchedResultsController.fetchedObjects!
-            print(favoriteItem.count)
+            debugPrint(favoriteItem.count)
             
             
         } catch {

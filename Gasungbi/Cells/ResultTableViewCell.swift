@@ -25,7 +25,20 @@ class ResultTableViewCell: UITableViewCell,LabelForm {
         self.priceLabel.text = ""
         self.priceformatter.delegate = self
     }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
 
+        if selected {
+            contentView.backgroundColor = UIColor.lightGray
+            priceLabel.textColor = UIColor.blue
+       
+        } else {
+            contentView.backgroundColor = UIColor.clear
+            priceLabel.textColor = UIColor.red
+           
+        }
+    }
     func configure(data: SearchResults) {
         self.selectionStyle = .none
         if let imageURL = data.image {
@@ -60,9 +73,6 @@ class PriceFormatter: NSObject {
         formatter.maximumFractionDigits = 0 // 허용하는 소숫점 자리수
           // formatter.groupingSeparator // .decimal -> ,
         
-//        if let removeAllSeperator = priceString?.replacingOccurrences(of:
-//            formatter.groupingSeparator, with: "")
-      //  {
             var beforeFormattedString = priceString!
             
             if formatter.number(from: priceString!) != nil {
@@ -83,7 +93,6 @@ class PriceFormatter: NSObject {
                     }
                 }
                 
-          //  }
         return true
     }
 }

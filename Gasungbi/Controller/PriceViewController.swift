@@ -8,20 +8,25 @@
 
 import UIKit
 import WebKit
-
+import WebViewWarmUper
 
 class PriceViewController: UIViewController,WKUIDelegate {
     
     var webView: WKWebView!
     var detailUrl: String = ""
     var itemName: String = ""
+    private var loadHTMLStart: TimeInterval = 0
+    
     
     override func loadView() {
-        let webConfiguration = WKWebViewConfiguration()
         
-        webView = WKWebView(frame: .zero, configuration: webConfiguration)
-        webView.uiDelegate = self
-        view = webView
+        let customWarmUper = WKWebViewWarmUper { () -> WKWebView in
+          let configuration = WKWebViewConfiguration()
+          // Setup configuration.
+          return WKWebView(frame: .zero, configuration: configuration)
+        }
+
+        webView = customWarmUper.dequeue()
     }
 
     @objc func back(sender: UIBarButtonItem) {
@@ -37,11 +42,18 @@ class PriceViewController: UIViewController,WKUIDelegate {
     }
     
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        webView = nil
+    }
     // Convert String into URL and load the URL
     private func sendRequest(urlString: String) {
-      DispatchQueue.main.async {
-         self.webView.load(URLRequest(url: URL(string: urlString)!))
-       }
+        webView.navigationDelegate = self
+        webView.scrollView.isScrollEnabled = false
+        self.view = webView
+        loadHTMLStart = CACurrentMediaTime()
+        let request = URLRequest(url: URL(string: urlString)!)
+        webView.load(request)
     }
     
     @IBAction func back(_ sender: Any) {
@@ -61,3 +73,14 @@ class PriceViewController: UIViewController,WKUIDelegate {
         
 }
 
+extension PriceViewController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+         updateResult()
+     }
+    
+    // check loading time (sec)
+    private func updateResult() {
+        let delta = CACurrentMediaTime() - loadHTMLStart
+        debugPrint(delta)
+    }
+}

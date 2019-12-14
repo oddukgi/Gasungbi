@@ -10,6 +10,7 @@ target 'Gasungbi' do
   pod 'AlamofireObjectMapper', '~> 5.0'
   pod 'ObjectMapper'
   pod 'Kingfisher'
+  pod 'WebViewWarmUper'
 end
 
 post_install do |installer|

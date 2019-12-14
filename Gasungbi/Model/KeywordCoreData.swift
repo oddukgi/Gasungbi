@@ -37,7 +37,7 @@ struct KeywordCoreData: KeywordProtocol {
         do {
             try context.save()
         } catch {
-            print("Error deleting pin: \(error)")
+            debugPrint("Error deleting pin: \(error)")
         }
     }
     

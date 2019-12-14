@@ -46,8 +46,7 @@ class ResultViewController: UIViewController, NSFetchedResultsControllerDelegate
                                                      object: nil)
        }
     
-       
-
+    
     // MARK: - Notification Methods
     // close keyboard
      @objc private func searchBarResignFirstResponder() {
@@ -59,11 +58,7 @@ class ResultViewController: UIViewController, NSFetchedResultsControllerDelegate
     override func viewWillAppear(_ animated: Bool) {
         navigationItem.hidesSearchBarWhenScrolling = false
     }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-         super.viewDidDisappear(animated)
-        
-     }
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showPrice" {
@@ -80,22 +75,21 @@ class ResultViewController: UIViewController, NSFetchedResultsControllerDelegate
         self.tableView.register(UINib(nibName: "ResultTableViewCell", bundle: nil), forCellReuseIdentifier: "ResultTableViewCell")
     }
 
-
     // MARK: - Search Keyword
     func configureTable(data: [SearchResults]) {
         
-       
+        self.showIndicator()
         APIManager.search(item: self.keyword) { searchResult,error in
         
-            if searchResult.result.isFailure == true {
+            if searchResult.error != nil {
                                     
                 self.hideIndicator()
                 self.cellData.removeAll()
                 self.tableView.reloadData()
-                self.presentErrorAlert(title: "Failed to get data", message: error!.localizedDescription)
+                self.presentErrorAlert(title: "Failed to search data", message: error!.localizedDescription)
             }
             else {
-                self.showIndicator()
+          
                 if let count = searchResult.value?.total { self.totalCount = Int(count)! }
                 if let results = searchResult.value?.items {
                     self.cellData = data.isEmpty ? [SearchResults]() : self.cellData
@@ -109,7 +103,7 @@ class ResultViewController: UIViewController, NSFetchedResultsControllerDelegate
                 }
                 else {
                     
-                    print("Empty searchResult.value")
+                    debugPrint("Empty searchResult.value")
                 }
                 
             }
@@ -135,7 +129,7 @@ class ResultViewController: UIViewController, NSFetchedResultsControllerDelegate
            try DataController.shared.viewContext.save()
         
        } catch let error as NSError  {
-           print("Could not save \(error), \(error.userInfo)")
+           debugPrint("Could not save \(error), \(error.userInfo)")
        }
 
     }
@@ -149,7 +143,7 @@ class ResultViewController: UIViewController, NSFetchedResultsControllerDelegate
         do {
             try DataController.shared.save()
         } catch {
-            print("Error saving new pin: \(error)")
+            debugPrint("Error saving new pin: \(error)")
         }
     }
 
@@ -157,7 +151,16 @@ class ResultViewController: UIViewController, NSFetchedResultsControllerDelegate
         
         guard selectedItems.count > 0 else { return }
         FavoritesCoreData.shared.createFavorites(selectedItems: selectedItems,forSearch: searchItem)
-    
+      
+        // find selected row and change value
+        if let selectedIndexPaths = tableView.indexPathsForSelectedRows {
+            for indexPath in selectedIndexPaths {
+                  tableView.deselectRow(at: indexPath, animated: false)
+                   self.cellData[indexPath.row].isSelected = false
+            }
+        }
+        
+        tableView.reloadData()
     }
     
     func tableViewClear() {
@@ -207,14 +210,10 @@ extension ResultViewController: UISearchBarDelegate {
 
     @objc func reload(_ searchBar: UISearchBar) {
        
-        if searchBar.text != "" {
-            
+        if !searchBar.text!.isEmpty {
             self.configureTable(data: [SearchResults]())
         }
     }
-
-   
-
 }
 
 
