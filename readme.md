@@ -35,8 +35,8 @@ pod install
    * network library : [Alamofire](https://github.com/Alamofire/Alamofire)
    * Swift library for downloading and caching images from the web : [Kingfisher](https://github.com/onevcat/Kingfisher)
    * simple JSON Object mapping library : [ObjectMapper](https://github.com/tristanhimmelman/ObjectMapper)
+   * Load webpage using [WebViewWarmUper](https://github.com/bernikovich/WebViewWarmUper)
 - Multiple select table view 
-- Show website using WKWebView
 - Keep favorites list using Core Data 
 
 
