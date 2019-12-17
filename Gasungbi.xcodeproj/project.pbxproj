@@ -40,9 +40,11 @@
 		88E3CA0D2393F1F10090FCB2 /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E3CA0B2393F1F00090FCB2 /* FavoriteTableViewCell.swift */; };
 		88E3CA0E2393F1F10090FCB2 /* FavoriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88E3CA0C2393F1F10090FCB2 /* FavoriteTableViewCell.xib */; };
 		88FE77AB2384020F001F6FAD /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FE77AA2384020F001F6FAD /* UIViewController+Extensions.swift */; };
+		A290A790E8E01BE68351FAFF /* Pods_Gasungbi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8439B9589FED595C8D3FEC69 /* Pods_Gasungbi.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8439B9589FED595C8D3FEC69 /* Pods_Gasungbi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gasungbi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88053B5623A099E7005EFD3D /* FavoriteViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoriteViewController+Extension.swift"; sourceTree = "<group>"; };
 		8808EEF023864EA400E598B7 /* SearchResultMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultMapper.swift; sourceTree = "<group>"; };
 		880A7EDE23829F3C005425AE /* Gasungbi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gasungbi.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +80,8 @@
 		88E3CA0B2393F1F00090FCB2 /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		88E3CA0C2393F1F10090FCB2 /* FavoriteTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoriteTableViewCell.xib; sourceTree = "<group>"; };
 		88FE77AA2384020F001F6FAD /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		A576A5F03084575C4C22BA2C /* Pods-Gasungbi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gasungbi.release.xcconfig"; path = "Target Support Files/Pods-Gasungbi/Pods-Gasungbi.release.xcconfig"; sourceTree = "<group>"; };
+		B2B25C68AF6A7C3B5938ADE5 /* Pods-Gasungbi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gasungbi.debug.xcconfig"; path = "Target Support Files/Pods-Gasungbi/Pods-Gasungbi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A290A790E8E01BE68351FAFF /* Pods_Gasungbi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +99,8 @@
 		71908A0B075290309CA1A09B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				B2B25C68AF6A7C3B5938ADE5 /* Pods-Gasungbi.debug.xcconfig */,
+				A576A5F03084575C4C22BA2C /* Pods-Gasungbi.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -105,6 +112,7 @@
 				880A7EE023829F3C005425AE /* Gasungbi */,
 				880A7EDF23829F3C005425AE /* Products */,
 				71908A0B075290309CA1A09B /* Pods */,
+				F1B3C8CC26E40A5D8C8D7BF6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -204,6 +212,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		F1B3C8CC26E40A5D8C8D7BF6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8439B9589FED595C8D3FEC69 /* Pods_Gasungbi.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -211,9 +227,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 880A7EF523829F3E005425AE /* Build configuration list for PBXNativeTarget "Gasungbi" */;
 			buildPhases = (
+				4204A0B47C04BCD57D50A8DF /* [CP] Check Pods Manifest.lock */,
 				880A7EDA23829F3C005425AE /* Sources */,
 				880A7EDB23829F3C005425AE /* Frameworks */,
 				880A7EDC23829F3C005425AE /* Resources */,
+				072F6D77E6A3E3AB655A9999 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -272,6 +290,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		072F6D77E6A3E3AB655A9999 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gasungbi/Pods-Gasungbi-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gasungbi/Pods-Gasungbi-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gasungbi/Pods-Gasungbi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4204A0B47C04BCD57D50A8DF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Gasungbi-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		880A7EDA23829F3C005425AE /* Sources */ = {
@@ -446,6 +506,7 @@
 		};
 		880A7EF623829F3E005425AE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2B25C68AF6A7C3B5938ADE5 /* Pods-Gasungbi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -464,6 +525,7 @@
 		};
 		880A7EF723829F3E005425AE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A576A5F03084575C4C22BA2C /* Pods-Gasungbi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
