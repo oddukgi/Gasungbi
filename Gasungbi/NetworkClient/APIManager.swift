@@ -20,8 +20,8 @@ class APIManager: APIConstant {
         
            let urlString: String = APIConstant.shared.url(item)
            
-           let header = ["X-Naver-Client-Id":"YaRtVe3njeHDoaI5TIwg",
-                         "X-Naver-Client-Secret":"cacuTTxDDY"]
+           let header = ["X-Naver-Client-Id":"YOUR_ID",
+                         "X-Naver-Client-Secret":"YOUR_PW"]
            
            Alamofire.request(urlString, headers: header).validate(statusCode: 200 ..< 500).responseObject { (response: DataResponse<SearchResultsGroup>) in
                 switch response.result {
