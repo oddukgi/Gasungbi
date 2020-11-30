@@ -14,8 +14,7 @@ class APIConstant: APIConstantProtocol {
      private init() {}
     
      func url(_ keyword: String) -> String {
-       //               return Endpoints.base + "/search/movie" + Endpoints.apiKeyParam + "&query=\(query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""))"
-        return "https://openapi.naver.com/v1/search/shop.json" + "?query=\(keyword.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")" + "&start=1&display=10&sort=sim"
+         return "https://openapi.naver.com/v1/search/shop.json" + "?query=\(keyword.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")" + "&start=1&display=10&sort=sim"
     }
     
 }
